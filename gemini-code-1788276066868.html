@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disney World Family Trip Dashboard | Fall 2026</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="dashboard-header">
+    <div class="header-container">
+      <div class="badge">FALL 2026 · ORLANDO, FL</div>
+      <h1>Disney World Family Trip</h1>
+      <p class="subtitle">Oct 31 – Nov 4, 2026 · 2 Adults + 1 Child (Age 6)</p>
+    </div>
+  </header>
+
+  <main class="dashboard-grid">
+
+    <!-- Overview & Stats -->
+    <section class="card stat-card">
+      <div class="stat">
+        <span class="stat-value">4/10 – 5/10</span>
+        <span class="stat-label">Crowd Level</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">5 Days</span>
+        <span class="stat-label">1 Park Per Day</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">Low</span>
+        <span class="stat-label">Projected Wait Times</span>
+      </div>
+    </section>
+
+    <!-- 5-Day Plan -->
+    <section class="card">
+      <h2>The 5-Day Theme Park Plan</h2>
+      <div class="itinerary-list">
+        <div class="day-item">
+          <div class="day-badge">DAY 1 · SAT 10/31</div>
+          <div class="day-details">
+            <h3>Disney's Animal Kingdom</h3>
+            <p>Best arrival-day park — lower crowds and an easy pace even with an afternoon start.</p>
+          </div>
+          <div class="crowd-pill low">Crowd 4/10</div>
+        </div>
+
+        <div class="day-item">
+          <div class="day-badge">DAY 2 · SUN 11/01</div>
+          <div class="day-details">
+            <h3>Disney's Hollywood Studios</h3>
+            <p>Lowest projected wait-time day for this park during your stay.</p>
+          </div>
+          <div class="crowd-pill med">Crowd 5/10</div>
+        </div>
+
+        <div class="day-item">
+          <div class="day-badge">DAY 3 · MON 11/02</div>
+          <div class="day-details">
+            <h3>Blizzard Beach Water Park</h3>
+            <p>Child-focused day and a real break from theme-park intensity.</p>
+          </div>
+          <div class="crowd-pill low">Crowd 3/10</div>
+        </div>
+
+        <div class="day-item">
+          <div class="day-badge">DAY 4 · TUE 11/03</div>
+          <div class="day-details">
+            <h3>EPCOT</h3>
+            <p>Food & Wine Festival running with manageable midweek crowds.</p>
+          </div>
+          <div class="crowd-pill low">Crowd 4/10</div>
+        </div>
+
+        <div class="day-item">
+          <div class="day-badge">DAY 5 · WED 11/04</div>
+          <div class="day-details">
+            <h3>Magic Kingdom</h3>
+            <p>Full operating day with no Halloween Party early closure.</p>
+          </div>
+          <div class="crowd-pill med">Crowd 5/10</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Arrival Options -->
+    <section class="card">
+      <h2>Saturday 10/31 Arrival Strategies</h2>
+      <p class="section-desc">Magic Kingdom closes early for the sold-out Halloween Party. Choose your arrival route depending on flight timing:</p>
+      
+      <div class="tab-buttons">
+        <button class="tab-btn active" onclick="switchTab(event, 'tab-ak')">Recommended: Animal Kingdom</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-water')">Early Landing: Water Park</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-springs')">Lowest Effort: Springs & Pool</button>
+      </div>
+
+      <div id="tab-ak" class="tab-content active">
+        <h3>Animal Kingdom Half-Day</h3>
+        <p class="tagline">Tap in by 12:30 PM | Park closes early</p>
+
+[cite: 1]        <ul>
+          <li>Lowest-stress park option if flight schedule experiences minor delays.</li>
+          <li>Pandora, Kilimanjaro Safaris, and Lion King show make a complete afternoon.</li>
+          <li>Earliest park closure gives your 6-year-old an early bedtime before rope-drop day.</li>
+        </ul>
+        <div class="action-box"><strong>Action Required:</strong> Park ticket for 10/31 + Satu'li Canteen Mobile Order.</div>
+      </div>
+
+      <div id="tab-water" class="tab-content">
+        <h3>Water Park Afternoon</h3>
+        <p class="tagline">Arrive by 11:00 AM for Blizzard Beach</p>
+        <ul>
+          <li>Immediate splash/swim payoff for your 6-year-old right after traveling.</li>
+          <li>No long walking marathon on day one.</li>
+          <li>Frees Monday 11/02 to become a second theme-park day or full rest day.</li>
+        </ul>
+        <div class="action-box"><strong>Action Required:</strong> Water park add-on + swimsuits packed in carry-on.</div>
+      </div>
+
+      <div id="tab-springs" class="tab-content">
+        <h3>Disney Springs + Resort Pool</h3>
+        <p class="tagline">Anytime Arrival — No Ticket Required</p>
+        <ul>
+          <li>Works no matter when your flight lands or when hotel room is ready.</li>
+          <li>Explore World of Disney, LEGO Store, and Marketplace Carousel.</li>
+          <li>Low-pressure dinner reservation and early bedtime.</li>
+        </ul>
+        <div class="action-box"><strong>Action Required:</strong> Disney Springs dinner reservation.</div>
+      </div>
+    </section>
+
+    <!-- Flight Logistics -->
+    <section class="card">
+      <h2>Flights Logistics (Oct 31 → Nov 5)</h2>
+      
+      <h3>Outbound · Sat Oct 31</h3>
+      <div class="flight-grid">
+        <div class="flight-card best-fit">
+          <span class="badge">BEST FIT · JETBLUE</span>
+          <div class="flight-times"><strong>HPN 7:00 AM</strong> → <strong>MCO 10:05 AM</strong> (3h 05m Nonstop)</div>
+          <p>On the ground by 10 AM, at resort by 11:30 AM — Animal Kingdom half-day is effortless.</p>
+        </div>
+        <div class="flight-card">
+          <span class="badge secondary">SOUTHWEST</span>
+          <div class="flight-times"><strong>BDL 6:20 AM</strong> → <strong>MCO 9:30 AM</strong> (3h 10m Nonstop)</div>
+          <p>Two free checked bags. Ideal if packing extra swim gear or stroller.</p>
+        </div>
+        <div class="flight-card">
+          <span class="badge secondary">JETBLUE</span>
+          <div class="flight-times"><strong>HPN 10:45 AM</strong> → <strong>MCO 1:50 PM</strong> (3h 05m Nonstop)</div>
+          <p>Gentler morning with a 6-year-old; pair with Disney Springs + pool evening.</p>
+        </div>
+      </div>
+
+      <h3>Return · Thu Nov 5</h3>
+      <div class="flight-grid">
+        <div class="flight-card best-fit">
+          <span class="badge">BEST FIT · JETBLUE</span>
+          <div class="flight-times"><strong>MCO 5:10 PM</strong> → <strong>HPN 7:55 PM</strong> (2h 45m Nonstop)</div>
+          <p>Full resort pool morning and lunch before heading to MCO around 2:15 PM.</p>
+        </div>
+        <div class="flight-card">
+          <span class="badge secondary">SOUTHWEST</span>
+          <div class="flight-times"><strong>MCO 4:45 PM</strong> → <strong>BDL 7:35 PM</strong> (2h 50m Nonstop)</div>
+          <p>Similar evening timing; free baggage allowance for the return home.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Checklist -->
+    <section class="card">
+      <div class="checklist-header">
+        <h2>Packing & Booking Checklist</h2>
+        <div class="progress-bar-container">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <span id="checklist-counter">0 / 14 Completed</span>
+      </div>
+
+      <div class="checklist-grid">
+        <div class="checklist-group">
+          <h3>Book Ahead</h3>
+          <label class="check-item"><input type="checkbox" onchange="updateProgress()"> Park tickets + reservations for all 5 days</label>
+          <label class="check-item"><input type="checkbox" onchange="updateProgress()"> Blizzard Beach water park ticket</label>
+          <label class="check-item"><input type="checkbox" onchange="updateProgress()"> Dining reservations (60 days prior)</label>
+          <label class="check-item"><input type="checkbox" onchange="updateProgress()"> Airport transfers (round-trip)</label>
+        </div>
+
+        <div class="checklist-group">
+          <h3>Park Bag</h3>
+          <label class="check-item"><input type="checkbox" onchange="updateProgress()"> Refillable water bottles</label>
+          <label class="check-item"><input type="checkbox" onchange="updateProgress()"> Compact rain ponchos</label>
+          <label class="check-item"><input type="checkbox" onchange="updateProgress()"> Portable phone battery & cables</label>
+          <label class="check-item"><input type="checkbox" onchange="updateProgress()"> Sunscreen + hats</label>
+          <label class="check-item"><input type="checkbox" onchange="updateProgress()"> Snacks for the 3:00 PM slump</label>
+        </div>
+
+        <div class="checklist-group">
+          <h3>Water Park Bag</h3>
+          <label class="check-item"><input type="checkbox" onchange="updateProgress()"> Swimsuits packed in carry-on</label>
+          <label class="check-item"><input type="checkbox" onchange="updateProgress()"> Water shoes / flip-flops</label>
+          <label class="check-item"><input type="checkbox" onchange="updateProgress()"> Waterproof phone pouch</label>
+          <label class="check-item"><input type="checkbox" onchange="updateProgress()"> Kid goggles for age 6</label>
+          <label class="check-item"><input type="checkbox" onchange="updateProgress()"> Celebration buttons at Guest Relations</label>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
