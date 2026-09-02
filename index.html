@@ -129,6 +129,15 @@
     .crowd-pill.low { background: #dcfce7; color: #15803d; }
     .crowd-pill.med { background: #fef9c3; color: #a16207; }
 
+    /* Must-Do Attractions Grid */
+    .park-rides-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 0.5rem; }
+    .park-ride-card { border: 1px solid var(--border); border-radius: 12px; padding: 1rem; background: #fafafa; }
+    .park-ride-card h3 { font-size: 1rem; color: var(--mickey-black); border-bottom: 2px solid var(--mickey-yellow); padding-bottom: 0.25rem; margin-bottom: 0.75rem; display: flex; justify-content: space-between; align-items: center; }
+    .park-ride-card ul { list-style: none; padding-left: 0; }
+    .park-ride-card li { font-size: 0.85rem; color: #334155; margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative; }
+    .park-ride-card li::before { content: "★"; position: absolute; left: 0; color: var(--mickey-red); font-size: 0.8rem; }
+    .ride-note { font-size: 0.75rem; color: #64748b; font-style: italic; }
+
     /* Flights */
     .flight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 0.5rem; margin-bottom: 1.5rem; }
     .flight-card { border: 1px solid var(--border); padding: 1rem; border-radius: 12px; background: white; }
@@ -153,7 +162,7 @@
       <div class="badge">FALL 2026 · ORLANDO, FL</div>
       <h1>Disney World Family Trip</h1>
       <p class="subtitle">Oct 31 – Nov 5, 2026 · 2 Adults + 1 Child (Age 6)</p>
-      <div class="resort-tag">Disney's BoardWalk Villas · Deluxe Studio Room w/Resort View</div>
+      <div class="resort-tag">🏨 Disney's BoardWalk Villas · Deluxe Studio (Resort View)</div>
       
       <!-- Countdown Calendar with Mickey Icon -->
       <div class="countdown-container">
@@ -271,6 +280,49 @@
       </div>
     </section>
 
+    <!-- Must-Do Attractions by Park -->
+    <section class="card">
+      <h2>
+        <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#e60012">
+          <circle cx="30" cy="30" r="22" /><circle cx="70" cy="30" r="22" /><circle cx="50" cy="62" r="30" />
+        </svg>
+        Must-Do Attractions by Park
+      </h2>
+      <div class="park-rides-grid">
+        
+        <div class="park-ride-card">
+          <h3>Disney's Hollywood Studios <span>🎬</span></h3>
+          <ul>
+            <li><strong>Mickey & Minnie’s Runaway Railway</strong> <span class="ride-note">(All ages family favorite)</span></li>
+            <li><strong>Slinky Dog Dash</strong> <span class="ride-note">(Fun 38" height requirement coaster)</span></li>
+            <li><strong>Toy Story Mania!</strong> <span class="ride-note">(Interactive 3D game ride)</span></li>
+            <li><strong>Star Wars: Rise of the Resistance</strong> <span class="ride-note">(Immersive flagship ride)</span></li>
+          </ul>
+        </div>
+
+        <div class="park-ride-card">
+          <h3>EPCOT <span>🌍</span></h3>
+          <ul>
+            <li><strong>Remy’s Ratatouille Adventure</strong> <span class="ride-note">(Right by International Gateway!)</span></li>
+            <li><strong>Frozen Ever After</strong> <span class="ride-note">(World Showcase favorite)</span></li>
+            <li><strong>Soarin’ Around the World</strong> <span class="ride-note">(Breathtaking flight simulator)</span></li>
+            <li><strong>Guardians of the Galaxy: Cosmic Rewind</strong> <span class="ride-note">(Thrilling indoor coaster)</span></li>
+          </ul>
+        </div>
+
+        <div class="park-ride-card">
+          <h3>Magic Kingdom <span>Castle</span></h3>
+          <ul>
+            <li><strong>Seven Dwarfs Mine Train</strong> <span class="ride-note">(Fantasyland family coaster)</span></li>
+            <li><strong>Peter Pan’s Flight</strong> <span class="ride-note">(Classic dark ride)</span></li>
+            <li><strong>Big Thunder Mountain Railroad</strong> <span class="ride-note">(Wildest ride in the wilderness!)</span></li>
+            <li><strong>Haunted Mansion</strong> <span class="ride-note">(Spooky family fun for fall)</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
     <!-- Flight Logistics -->
     <section class="card">
       <h2>
@@ -321,7 +373,7 @@
         <div class="progress-bar-container">
           <div id="progress-bar" class="progress-bar"></div>
         </div>
-        <span id="checklist-counter" style="font-size: 0.8rem; font-weight: 700; color: var(--mickey-red);">0 / 14 Completed</span>
+        <span id="checklist-counter" style="font-size: 0.8rem; font-weight: 700; color: var(--mickey-red);">0 / 18 Completed</span>
       </div>
 
       <div class="checklist-grid">
@@ -329,26 +381,30 @@
           <h3>Resort & App Setup</h3>
           <label class="check-item"><input type="checkbox" id="c1" onchange="updateProgress()"> Complete Online Check-In in MyDisneyExperience</label>
           <label class="check-item"><input type="checkbox" id="c2" onchange="updateProgress()"> Pay remaining balance (due Oct 1)</label>
-          <label class="check-item"><input type="checkbox" id="c3" onchange="updateProgress()"> Setup MagicBands / MagicBand+</label>
+          <label class="check-item"><input type="checkbox" id="c3" onchange="updateProgress()"> Pack MagicBands / MagicBand+</label>
           <label class="check-item"><input type="checkbox" id="c4" onchange="updateProgress()"> Book round-trip airport transfer</label>
         </div>
 
         <div class="checklist-group">
-          <h3>Park Bag</h3>
-          <label class="check-item"><input type="checkbox" id="c5" onchange="updateProgress()"> Refillable water bottles</label>
-          <label class="check-item"><input type="checkbox" id="c6" onchange="updateProgress()"> Compact rain ponchos</label>
-          <label class="check-item"><input type="checkbox" id="c7" onchange="updateProgress()"> Portable phone battery & cables</label>
-          <label class="check-item"><input type="checkbox" id="c8" onchange="updateProgress()"> Sunscreen + hats</label>
-          <label class="check-item"><input type="checkbox" id="c9" onchange="updateProgress()"> Kid park snacks</label>
+          <h3>Park Daypacks & Bags</h3>
+          <label class="check-item"><input type="checkbox" id="c5" onchange="updateProgress()"> Lightweight backpacks / daypacks</label>
+          <label class="check-item"><input type="checkbox" id="c6" onchange="updateProgress()"> Personal USB mini-fans & cooling towels</label>
+          <label class="check-item"><input type="checkbox" id="c7" onchange="updateProgress()"> Refillable water bottles</label>
+          <label class="check-item"><input type="checkbox" id="c8" onchange="updateProgress()"> Sunscreen & sun hats</label>
+          <label class="check-item"><input type="checkbox" id="c9" onchange="updateProgress()"> Portable phone power banks & charging cords</label>
+          <label class="check-item"><input type="checkbox" id="c10" onchange="updateProgress()"> Compact rain ponchos / umbrellas</label>
+          <label class="check-item"><input type="checkbox" id="c11" onchange="updateProgress()"> Hand sanitizer, wet wipes & tissues</label>
+          <label class="check-item"><input type="checkbox" id="c12" onchange="updateProgress()"> First-aid kit: Band-Aids & blister moleskin</label>
         </div>
 
         <div class="checklist-group">
-          <h3>BoardWalk Essentials</h3>
-          <label class="check-item"><input type="checkbox" id="c10" onchange="updateProgress()"> Swimsuits packed in carry-on (for Day 1 pool)</label>
-          <label class="check-item"><input type="checkbox" id="c11" onchange="updateProgress()"> Comfortable walking shoes for EPCOT Gateway</label>
-          <label class="check-item"><input type="checkbox" id="c12" onchange="updateProgress()"> Autograph book / pen for Garden Grill</label>
-          <label class="check-item"><input type="checkbox" id="c13" onchange="updateProgress()"> Kid swim goggles</label>
-          <label class="check-item"><input type="checkbox" id="c14" onchange="updateProgress()"> Pick up Birthday / Celebration buttons</label>
+          <h3>BoardWalk & Kid Essentials</h3>
+          <label class="check-item"><input type="checkbox" id="c13" onchange="updateProgress()"> Swimsuits in carry-on (for Day 1 pool access)</label>
+          <label class="check-item"><input type="checkbox" id="c14" onchange="updateProgress()"> Comfortable broken-in walking shoes</label>
+          <label class="check-item"><input type="checkbox" id="c15" onchange="updateProgress()"> Autograph book & thick pens (for Garden Grill)</label>
+          <label class="check-item"><input type="checkbox" id="c16" onchange="updateProgress()"> Kid swim goggles & pool gear</label>
+          <label class="check-item"><input type="checkbox" id="c17" onchange="updateProgress()"> Pick up Birthday / Celebration buttons</label>
+          <label class="check-item"><input type="checkbox" id="c18" onchange="updateProgress()"> Kid park snacks (granola bars, fruit pouches)</label>
         </div>
       </div>
     </section>
