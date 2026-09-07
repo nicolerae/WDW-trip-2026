@@ -15,6 +15,10 @@
       --card-bg: #ffffff;
       --border: #e2e8f0;
       --success: #16a34a;
+      --plant-green: #2e7d32;
+      --plant-bg: #f1f8e9;
+      --ll-blue: #0284c7;
+      --ll-bg: #f0f9ff;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background-color: var(--bg-gray); color: var(--mickey-dark); line-height: 1.5; padding-bottom: 3rem; }
@@ -130,14 +134,28 @@
     .crowd-pill.low { background: #dcfce7; color: #15803d; }
     .crowd-pill.med { background: #fef9c3; color: #a16207; }
 
-    /* Must-Do Attractions Grid */
-    .park-rides-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 0.5rem; }
-    .park-ride-card { border: 1px solid var(--border); border-radius: 12px; padding: 1rem; background: #fafafa; }
-    .park-ride-card h3 { font-size: 1rem; color: var(--mickey-black); border-bottom: 2px solid var(--mickey-yellow); padding-bottom: 0.25rem; margin-bottom: 0.75rem; display: flex; justify-content: space-between; align-items: center; }
-    .park-ride-card ul { list-style: none; padding-left: 0; }
-    .park-ride-card li { font-size: 0.85rem; color: #334155; margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative; }
-    .park-ride-card li::before { content: "★"; position: absolute; left: 0; color: var(--mickey-red); font-size: 0.8rem; }
-    .ride-note { font-size: 0.75rem; color: #64748b; font-style: italic; }
+    /* Vegetarian / Vegan Section */
+    .veg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1rem; margin-top: 0.5rem; }
+    .veg-card { border: 1px solid #c8e6c9; background: var(--plant-bg); border-radius: 12px; padding: 1rem; position: relative; }
+    .veg-card h3 { font-size: 1rem; color: var(--plant-green); border-bottom: 2px solid #a5d6a7; padding-bottom: 0.3rem; margin-bottom: 0.6rem; display: flex; justify-content: space-between; align-items: center; }
+    .veg-card ul { list-style: none; padding-left: 0; }
+    .veg-card li { font-size: 0.83rem; color: #1b5e20; margin-bottom: 0.45rem; padding-left: 1.2rem; position: relative; line-height: 1.4; }
+    .veg-card li::before { content: "🌱"; position: absolute; left: 0; top: 0; font-size: 0.75rem; }
+    .veg-tag { font-size: 0.68rem; font-weight: 800; text-transform: uppercase; padding: 0.15rem 0.4rem; border-radius: 4px; margin-left: 0.3rem; display: inline-block; }
+    .tag-v { background: #c8e6c9; color: #1b5e20; }
+    .tag-vg { background: #a5d6a7; color: #0d3b11; }
+
+    /* Lightning Lane Section */
+    .ll-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 0.5rem; }
+    .ll-card { border: 1px solid #bae6fd; background: var(--ll-bg); border-radius: 12px; padding: 1rem; }
+    .ll-card h3 { font-size: 1rem; color: var(--ll-blue); border-bottom: 2px solid #7dd3fc; padding-bottom: 0.25rem; margin-bottom: 0.75rem; display: flex; justify-content: space-between; align-items: center; }
+    .ll-card ul { list-style: none; padding-left: 0; }
+    .ll-card li { font-size: 0.83rem; color: #0f172a; margin-bottom: 0.55rem; padding-left: 1.2rem; position: relative; line-height: 1.4; }
+    .ll-card li::before { content: "⚡"; position: absolute; left: 0; color: #0284c7; font-size: 0.75rem; }
+    .ll-badge { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; padding: 0.15rem 0.4rem; border-radius: 4px; display: inline-block; margin-left: 0.25rem; }
+    .tier-1 { background: #fef08a; color: #854d0e; }
+    .tier-2 { background: #e0f2fe; color: #0369a1; }
+    .single-pass { background: #fbcfe8; color: #9d174d; }
 
     /* Flights */
     .flight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 0.5rem; margin-bottom: 1.5rem; }
@@ -285,43 +303,143 @@
       </div>
     </section>
 
-    <!-- Must-Do Attractions by Park -->
-    <section class="card">
+    <!-- NEW SECTION: Kid-Friendly Lightning Lane Guide -->
+    <section class="card" style="border-left: 5px solid var(--ll-blue);">
       <h2>
-        <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#e60012">
+        <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#0284c7">
           <circle cx="30" cy="30" r="22" /><circle cx="70" cy="30" r="22" /><circle cx="50" cy="62" r="30" />
         </svg>
-        Must-Do Attractions by Park
+        Kid-Friendly Lightning Lane Pass Guide (Ages ~6–7)
       </h2>
-      <div class="park-rides-grid">
+      <p style="font-size: 0.85rem; color: #475569; margin-bottom: 1rem;">
+        Top-priority selections optimized for kids around age 6 to save the maximum amount of line waiting for high-demand, age-appropriate attractions. As Disney Resort guests, you can pre-book these starting 7 days before check-in!
+      </p>
+
+      <div class="ll-grid">
         
-        <div class="park-ride-card">
-          <h3>Disney's Hollywood Studios <span>🎬</span></h3>
+        <!-- Hollywood Studios -->
+        <div class="ll-card">
+          <h3>Hollywood Studios <span>🎬</span></h3>
           <ul>
-            <li><strong>Mickey & Minnie’s Runaway Railway</strong> <span class="ride-note">(All ages family favorite)</span></li>
-            <li><strong>Slinky Dog Dash</strong> <span class="ride-note">(Fun 38" height requirement coaster)</span></li>
-            <li><strong>Toy Story Mania!</strong> <span class="ride-note">(Interactive 3D game ride)</span></li>
-            <li><strong>Star Wars: Rise of the Resistance</strong> <span class="ride-note">(Immersive flagship ride)</span></li>
+            <li><strong>Slinky Dog Dash:</strong> #1 Priority pre-selection! Very high standby lines. (38" height requirement) <span class="ll-badge tier-1">Tier 1 Choice</span></li>
+            <li><strong>Mickey & Minnie’s Runaway Railway:</strong> High charm dark ride, fun for the whole family. <span class="ll-badge tier-2">Tier 2 Choice</span></li>
+            <li><strong>Toy Story Mania!:</strong> Low-stress interactive 3D carnival game ride with no height minimum. <span class="ll-badge tier-2">Tier 2 Choice</span></li>
+            <li><strong>Alien Swirling Saucers:</strong> Fun spinning ride in Toy Story Land; great quick follow-up pass during the day. <span class="ll-badge tier-2">Tier 2 Choice</span></li>
           </ul>
         </div>
 
-        <div class="park-ride-card">
+        <!-- EPCOT -->
+        <div class="ll-card">
           <h3>EPCOT <span>🌍</span></h3>
           <ul>
-            <li><strong>Remy’s Ratatouille Adventure</strong> <span class="ride-note">(Right by International Gateway!)</span></li>
-            <li><strong>Frozen Ever After</strong> <span class="ride-note">(World Showcase favorite)</span></li>
-            <li><strong>Soarin’ Around the World</strong> <span class="ride-note">(Breathtaking flight simulator)</span></li>
-            <li><strong>Guardians of the Galaxy: Cosmic Rewind</strong> <span class="ride-note">(Thrilling indoor coaster)</span></li>
+            <li><strong>Remy’s Ratatouille Adventure:</strong> Top Tier 1 pick! Right near your International Gateway entrance. <span class="ll-badge tier-1">Tier 1 Choice</span></li>
+            <li><strong>Frozen Ever After:</strong> Can be selected as Tier 1 instead of Remy if Frozen is a higher favorite. <span class="ll-badge tier-1">Tier 1 Alt</span></li>
+            <li><strong>Soarin’ Around the World:</strong> Smooth, gentle flying simulator over global landmarks (40" height requirement). <span class="ll-badge tier-2">Tier 2 Choice</span></li>
+            <li><strong>Journey Into Imagination With Figment:</strong> Zero wait dark ride; perfect mid-day low-sensory pick. <span class="ll-badge tier-2">Tier 2 Choice</span></li>
           </ul>
         </div>
 
-        <div class="park-ride-card">
+        <!-- Magic Kingdom -->
+        <div class="ll-card">
           <h3>Magic Kingdom <span>🏰</span></h3>
           <ul>
-            <li><strong>Seven Dwarfs Mine Train</strong> <span class="ride-note">(Fantasyland family coaster)</span></li>
-            <li><strong>Peter Pan’s Flight</strong> <span class="ride-note">(Classic dark ride)</span></li>
-            <li><strong>Big Thunder Mountain Railroad</strong> <span class="ride-note">(Wildest ride in the wilderness!)</span></li>
-            <li><strong>Haunted Mansion</strong> <span class="ride-note">(Spooky family fun for fall)</span></li>
+            <li><strong>Peter Pan’s Flight:</strong> Infamously long standby queues; ideal Tier 1 pre-booking. <span class="ll-badge tier-1">Tier 1 Choice</span></li>
+            <li><strong>Big Thunder Mountain Railroad:</strong> Great "first coaster" thrills for 6-year-olds (40" height requirement). <span class="ll-badge tier-1">Tier 1 Alt</span></li>
+            <li><strong>Buzz Lightyear’s Space Ranger Spin:</strong> Fun laser-shooting ride in Tomorrowland. <span class="ll-badge tier-2">Tier 2 Choice</span></li>
+            <li><strong>The Many Adventures of Winnie the Pooh:</strong> Gentle dark ride that skips 45+ min afternoon waits. <span class="ll-badge tier-2">Tier 2 Choice</span></li>
+            <li><strong>Seven Dwarfs Mine Train:</strong> Purchased separately as a Single Pass; ideal smooth coaster for this age. <span class="ll-badge single-pass">Single Pass</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Plant-Based & Vegetarian Dining Options -->
+    <section class="card" style="border-left: 5px solid var(--plant-green);">
+      <h2>
+        <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#2e7d32">
+          <circle cx="30" cy="30" r="22" /><circle cx="70" cy="30" r="22" /><circle cx="50" cy="62" r="30" />
+        </svg>
+        Vegetarian & Plant-Based Food Guide
+      </h2>
+      <p style="font-size: 0.85rem; color: #475569; margin-bottom: 1rem;">
+        Disney World offers official plant-based items (made with zero animal meat, dairy, eggs, or honey) marked with a green leaf logo 🌱, as well as easy vegetarian adjustments across table service and quick-service spots.
+      </p>
+
+      <div class="veg-grid">
+        
+        <!-- Beaches & Cream -->
+        <div class="veg-card">
+          <h3>Beaches & Cream <span class="veg-tag tag-vg">Plant-Based Friendly</span></h3>
+          <ul>
+            <li><strong>Impossible Burger:</strong> Plant-based patty on an allergy-friendly bun with seasonal relish & plant mayo. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Loaded Plant-Based Tots:</strong> Tots topped with plant-based chili, dairy-free cheese, sour cream, and green onions. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Beaches & Cream Grilled Cheese:</strong> Classic melted cheese served with creamy tomato soup. <span class="veg-tag tag-v">Vegetarian</span></li>
+            <li><strong>Cookie Fries & Non-Dairy Ice Cream:</strong> Crispy cookie fries with dips, plus non-dairy coconut/soy ice cream scoops & sundaes. <span class="veg-tag tag-vg">Vegan</span></li>
+          </ul>
+        </div>
+
+        <!-- Roundup Rodeo BBQ -->
+        <div class="veg-card">
+          <h3>Roundup Rodeo BBQ <span class="veg-tag tag-vg">Dedicated Veg Skillet</span></h3>
+          <ul>
+            <li><strong>Trixie’s Plant-Based Trio (Platter):</strong> Full BBQ platter featuring Combat Crisp Plant-Based Sausage, Slow-smoked Cauliflower, and Rip-Roarin' Jackfruit. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Rootin’ Tootin’ Tomato Salad & Veggie Slaw:</strong> Fresh cucumbers, tomatoes, and "The Claw!" crunchy veggie slaw. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Buckin' Baked Beans & Corn on Cob:</strong> Vegetarian baked beans and grilled street corn. <span class="veg-tag tag-v">Vegetarian</span></li>
+            <li><strong>Slinky Doooooooooog Mac & Cheese:</strong> Creamy classic baked mac & cheese. <span class="veg-tag tag-v">Vegetarian</span></li>
+            <li><strong>Gruff’s Peach-Strawberry Pie:</strong> Plant-based dessert served in a jar. <span class="veg-tag tag-vg">Vegan</span></li>
+          </ul>
+        </div>
+
+        <!-- Sci-Fi Dine-In -->
+        <div class="veg-card">
+          <h3>Sci-Fi Dine-In Theater <span class="veg-tag tag-vg">Fan Favorite</span></h3>
+          <ul>
+            <li><strong>Flying Saucer Impossible Burger:</strong> Plant-based burger topped with grilled portobello mushroom steak, cashew mozzarella, garlic-tomato aioli, and pesto. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Spinach & Artichoke Dip:</strong> Creamy cashew-based dip served with warm tortilla chips. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Crispy Onion Rings:</strong> Ask for the plant-based batter version. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Out-of-this-World Cookie Milkshake:</strong> Plant-based milkshake made with non-dairy milk, plant ice cream, and topped with an Oreo-style cookie! <span class="veg-tag tag-vg">Vegan</span></li>
+          </ul>
+        </div>
+
+        <!-- The Edison -->
+        <div class="veg-card">
+          <h3>The Edison (Disney Springs) <span class="veg-tag tag-v">Customizable</span></h3>
+          <ul>
+            <li><strong>The Beyond Burger:</strong> Plant-based burger patty served with lettuce, tomato, pickles, and fries (specify vegan/no dairy cheese if needed). <span class="veg-tag tag-v">Vegetarian</span></li>
+            <li><strong>Beyond Sausage & Pepper Pasta:</strong> Hearty pasta dish with plant-based sausage and savory marinara sauce. <span class="veg-tag tag-v">Vegetarian</span></li>
+            <li><strong>Crispy Brussels Sprouts & Sweet Potato Tots:</strong> Seasoned side options (ask for sweet potato tots without cheese for vegan). <span class="veg-tag tag-v">Vegetarian</span></li>
+          </ul>
+        </div>
+
+        <!-- Garden Grill -->
+        <div class="veg-card">
+          <h3>Garden Grill (EPCOT) <span class="veg-tag tag-vg">All-You-Care-To-Enjoy</span></h3>
+          <ul>
+            <li><strong>Harvest Veggie Feast Skillet:</strong> Served family-style with BBQ Jackfruit, Beyond Sausage, roasted vegetables, rice pilaf, and creamy mashed potatoes. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Farmer’s Salad:</strong> Fresh garden greens grown right inside EPCOT's Living with the Land pavilion. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Berry Shortcake / Crumble:</strong> Plant-based dessert featuring warm berries and non-dairy topping. <span class="veg-tag tag-vg">Vegan</span></li>
+          </ul>
+        </div>
+
+        <!-- Space 220 -->
+        <div class="veg-card">
+          <h3>Space 220 (EPCOT) <span class="veg-tag tag-vg">Prix Fixe Options</span></h3>
+          <ul>
+            <li><strong>Galaxy Grain Salad (Appetizer):</strong> Quinoa, beluga lentils, roasted beets, maitake mushrooms, and cashew hummus in citrus vinaigrette. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Terra-Bolognese (Entrée):</strong> House-made pasta with plant-based tempeh ragù and macadamia nut ricotta. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Space 220 Quinoa Burger (Lunch Entrée):</strong> Quinoa patty with avocado, tomato, and spicy aioli. <span class="veg-tag tag-v">Vegetarian</span></li>
+            <li><strong>Plant-Based Carrot Cake (Dessert):</strong> Rich spiced carrot cake with salted cream frosting, pepitas, and candied walnuts. <span class="veg-tag tag-vg">Vegan</span></li>
+          </ul>
+        </div>
+
+        <!-- Columbia Harbour House -->
+        <div class="veg-card">
+          <h3>Columbia Harbour House <span class="veg-tag tag-v">Quick Service</span></h3>
+          <ul>
+            <li><strong>Hearts of Palm & Artichoke Roll:</strong> Chilled hearts of palm, artichokes, lettuce, and tomato dressed on a toasted roll (seafood substitute). <span class="veg-tag tag-v">Vegetarian</span></li>
+            <li><strong>Lighthouse Sandwich:</strong> Hummus with tomato and broccoli slaw on toasted multigrain bread. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Sides & Kids Options:</strong> Steamed green beans with carrots, seasoned rice, French fries, and Uncrustables PB&J. <span class="veg-tag tag-vg">Vegan</span></li>
           </ul>
         </div>
 
