@@ -226,7 +226,7 @@
     .single-pass { background: #fbcfe8; color: #9d174d; }
 
     /* Flights */
-    .flight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 0.5rem; margin-bottom: 1.5rem; }
+    .flight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 0.5rem; margin-bottom: 0.5rem; }
     .flight-card { border: 1px solid var(--border); padding: 1rem; border-radius: 12px; background: white; }
     .flight-card.best-fit { border: 2px solid var(--mickey-yellow); background: #fffdf0; }
     .flight-card .badge { background: var(--mickey-black); color: var(--mickey-yellow); }
@@ -269,10 +269,10 @@
 
       <!-- Quick Index Links -->
       <nav class="dashboard-nav">
+        <a href="#flights" class="nav-link">✈️ Flights</a>
         <a href="#itinerary" class="nav-link">🗓️ Flexible Itinerary</a>
         <a href="#lightning-lanes" class="nav-link">⚡ Lightning Lanes</a>
         <a href="#plant-based-dining" class="nav-link">🌱 Plant-Based Guide</a>
-        <a href="#flights" class="nav-link">✈️ Flights</a>
         <a href="#checklist" class="nav-link">✅ Checklist</a>
       </nav>
     </div>
@@ -294,6 +294,30 @@
         <span class="stat-value">6 Bookings</span>
         <span class="stat-label">Dining Reservations Confirmed</span>
       </div>
+    </section>
+
+    <!-- Flight Logistics (Moved Higher) -->
+    <section id="flights" class="card">
+      <h2>
+        <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#e60012">
+          <circle cx="30" cy="30" r="22" /><circle cx="70" cy="30" r="22" /><circle cx="50" cy="62" r="30" />
+        </svg>
+        Confirmed Flight Details (Southwest Roundtrip)
+      </h2>
+      
+      <div class="flight-grid">
+        <div class="flight-card best-fit">
+          <span class="badge">OUTBOUND · SOUTHWEST #3501</span>
+          <div class="flight-times"><strong>BDL 6:15 AM</strong> → <strong>MCO 9:10 AM</strong> (2h 55m Nonstop)</div>
+          <p style="font-size: 0.8rem; color: #475569;">Lands at 9:10 AM! Perfect timing to drop luggage at BoardWalk and head straight to Blizzard Beach for an 11:30 AM arrival.</p>
+        </div>
+        <div class="flight-card best-fit">
+          <span class="badge">RETURN · SOUTHWEST #448</span>
+          <div class="flight-times"><strong>MCO 11:10 AM</strong> → <strong>BDL 1:50 PM</strong> (2h 40m Nonstop)</div>
+          <p style="font-size: 0.8rem; color: #475569;">Smooth morning departure home; allows easy resort check-out before heading to the airport.</p>
+        </div>
+      </div>
+      <p style="font-size: 0.82rem; color: #64748b; margin-top: 0.25rem; text-align: center;"><strong>Selected Total:</strong> $1,490.37 (Includes 6 Free Checked Bags & Family Boarding after Group A)</p>
     </section>
 
     <!-- Flexible 5-Day Plan with Option Cards -->
@@ -600,30 +624,6 @@
         </div>
 
       </div>
-    </section>
-
-    <!-- Flight Logistics -->
-    <section id="flights" class="card">
-      <h2>
-        <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#e60012">
-          <circle cx="30" cy="30" r="22" /><circle cx="70" cy="30" r="22" /><circle cx="50" cy="62" r="30" />
-        </svg>
-        Confirmed Flight Details (Southwest Roundtrip)
-      </h2>
-      
-      <div class="flight-grid">
-        <div class="flight-card best-fit">
-          <span class="badge">OUTBOUND · SOUTHWEST #3501</span>
-          <div class="flight-times"><strong>BDL 6:15 AM</strong> → <strong>MCO 9:10 AM</strong> (2h 55m Nonstop)</div>
-          <p style="font-size: 0.8rem; color: #475569;">Lands at 9:10 AM! Perfect timing to drop luggage at BoardWalk and head straight to Blizzard Beach for an 11:30 AM arrival.</p>
-        </div>
-        <div class="flight-card best-fit">
-          <span class="badge">RETURN · SOUTHWEST #448</span>
-          <div class="flight-times"><strong>MCO 11:10 AM</strong> → <strong>BDL 1:50 PM</strong> (2h 40m Nonstop)</div>
-          <p style="font-size: 0.8rem; color: #475569;">Smooth morning departure home; allows easy resort check-out before heading to the airport.</p>
-        </div>
-      </div>
-      <p style="font-size: 0.82rem; color: #64748b; margin-top: -0.5rem; text-align: center;"><strong>Selected Total:</strong> $1,490.37 (Includes 6 Free Checked Bags & Family Boarding after Group A)</p>
     </section>
 
     <!-- Checklist -->
