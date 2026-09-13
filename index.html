@@ -19,6 +19,9 @@
       --plant-bg: #f1f8e9;
       --ll-blue: #0284c7;
       --ll-bg: #f0f9ff;
+      --option-amber: #d97706;
+      --option-bg: #fffbeb;
+      --option-border: #fde68a;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background-color: var(--bg-gray); color: var(--mickey-dark); line-height: 1.5; padding-bottom: 3rem; }
@@ -121,10 +124,38 @@
     .stat-value { display: block; font-size: 1.15rem; font-weight: 800; color: var(--mickey-red); }
     .stat-label { font-size: 0.85rem; color: #64748b; font-weight: 600; }
 
+    /* Quick Jump Index Navigation */
+    .dashboard-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+    .nav-link {
+      background: rgba(255,255,255,0.12);
+      color: var(--mickey-white);
+      text-decoration: none;
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      transition: background 0.2s ease, color 0.2s ease;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .nav-link:hover {
+      background: var(--mickey-yellow);
+      color: var(--mickey-black);
+    }
+
     /* Days Itinerary */
-    .day-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border); }
+    .day-item { display: flex; flex-direction: column; gap: 0.75rem; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
     .day-item:last-child { border-bottom: none; }
+    .day-header-row { display: flex; align-items: flex-start; gap: 1rem; width: 100%; }
     .day-badge { font-size: 0.75rem; font-weight: 800; background: var(--mickey-black); color: var(--mickey-yellow); padding: 0.4rem 0.6rem; border-radius: 8px; min-width: 115px; text-align: center; margin-top: 0.2rem; }
+    .day-details { flex-grow: 1; }
     .day-details h3 { font-size: 1.05rem; color: var(--mickey-black); }
     .day-details p { font-size: 0.85rem; color: #475569; }
     .dining-tag { margin-top: 0.4rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
@@ -133,6 +164,43 @@
     .crowd-pill { margin-left: auto; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 999px; white-space: nowrap; }
     .crowd-pill.low { background: #dcfce7; color: #15803d; }
     .crowd-pill.med { background: #fef9c3; color: #a16207; }
+
+    /* Day Options / Backup Cards */
+    .options-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+      padding-left: 0.5rem;
+    }
+    .option-card {
+      background: var(--option-bg);
+      border: 1px solid var(--option-border);
+      border-left: 4px solid var(--option-amber);
+      border-radius: 10px;
+      padding: 0.75rem 0.9rem;
+      font-size: 0.82rem;
+    }
+    .option-card.primary {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-left: 4px solid var(--ll-blue);
+    }
+    .option-title {
+      font-weight: 800;
+      color: #78350f;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.3rem;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 0.5px;
+    }
+    .option-card.primary .option-title { color: #0369a1; }
+    .option-desc { color: #334155; line-height: 1.35; }
+    .option-pro { margin-top: 0.35rem; color: #15803d; font-weight: 600; font-size: 0.78rem; }
+    .option-con { color: #b91c1c; font-weight: 600; font-size: 0.78rem; }
 
     /* Vegetarian / Vegan Section */
     .veg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1rem; margin-top: 0.5rem; }
@@ -183,7 +251,7 @@
       <p class="subtitle">Oct 31 – Nov 5, 2026 · 3 Guests</p>
       <div class="resort-tag">🏨 Disney's BoardWalk Villas (EPCOT Resort Area)</div>
       
-      <!-- Countdown Calendar -->
+      <!-- Live Countdown Calendar -->
       <div class="countdown-container">
         <svg class="mickey-logo" viewBox="0 0 100 100" fill="#ffcc00">
           <circle cx="30" cy="30" r="22" />
@@ -198,6 +266,15 @@
           <div class="time-block"><span id="seconds" class="time-num">00</span><span class="time-label">Secs</span></div>
         </div>
       </div>
+
+      <!-- Quick Index Links -->
+      <nav class="dashboard-nav">
+        <a href="#itinerary" class="nav-link">🗓️ Flexible Itinerary</a>
+        <a href="#lightning-lanes" class="nav-link">⚡ Lightning Lanes</a>
+        <a href="#plant-based-dining" class="nav-link">🌱 Plant-Based Guide</a>
+        <a href="#flights" class="nav-link">✈️ Flights</a>
+        <a href="#checklist" class="nav-link">✅ Checklist</a>
+      </nav>
     </div>
   </header>
 
@@ -219,92 +296,139 @@
       </div>
     </section>
 
-    <!-- 5-Day Plan -->
-    <section class="card">
+    <!-- Flexible 5-Day Plan with Option Cards -->
+    <section id="itinerary" class="card">
       <h2>
         <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#e60012">
           <circle cx="30" cy="30" r="22" /><circle cx="70" cy="30" r="22" /><circle cx="50" cy="62" r="30" />
         </svg>
-        The Confirmed 5-Day Itinerary
+        5-Day Itinerary & Flexible Day Options
       </h2>
       <div class="itinerary-list">
         
+        <!-- DAY 1 -->
         <div class="day-item">
-          <div class="day-badge">DAY 1 · SAT 10/31</div>
-          <div class="day-details">
-            <h3>Arrival & Check-In Day</h3>
-            <p>Check in to BoardWalk Villas (after 4:00 PM). Walk to Beach Club Resort for afternoon lunch.</p>
-            <div class="dining-tag">
-              <span class="dining-pill">🍔 2:30 PM: Beaches & Cream Soda Shop</span>
+          <div class="day-header-row">
+            <div class="day-badge">DAY 1 · SAT 10/31</div>
+            <div class="day-details">
+              <h3>Arrival & Check-In Day</h3>
+              <p>Morning arrival (9:30 AM flight arrival). Drop bags at BoardWalk Villas before afternoon plans.</p>
+              <div class="dining-tag">
+                <span class="dining-pill">🍔 2:30 PM: Beaches & Cream Soda Shop</span>
+              </div>
+            </div>
+            <div class="crowd-pill low">Crowd 4/10</div>
+          </div>
+          
+          <!-- Day 1 Option Cards -->
+          <div class="options-container">
+            <div class="option-card primary">
+              <div class="option-title"><span>Option A (Recommended)</span> <span>🏊 Pool Day</span></div>
+              <div class="option-desc">Settle in, stroll around Crescent Lake, and enjoy <strong>Luna Park Pool</strong> (Keister Coaster slide) at BoardWalk or Stormalong Bay.</div>
+              <div class="option-pro">✓ Zero travel fatigue; easy, low-stress start before a big week.</div>
+            </div>
+            <div class="option-card">
+              <div class="option-title"><span>Option B (Water Park)</span> <span>❄️ Blizzard Beach</span></div>
+              <div class="option-desc">Head straight to Blizzard Beach after airport arrival (11:30 AM – 2:00 PM swim window) before your 2:30 PM meal.</div>
+              <div class="option-con">⚠️ Tighter timeline; requires changing in water park dressing rooms before lunch.</div>
             </div>
           </div>
-          <div class="crowd-pill low">Crowd 4/10</div>
         </div>
 
+        <!-- DAY 2 -->
         <div class="day-item">
-          <div class="day-badge">DAY 2 · SUN 11/01</div>
-          <div class="day-details">
-            <h3>Disney's Hollywood Studios</h3>
-            <p>Park hours: 9:00 AM – 9:00 PM (Early Entry 8:30 AM). Walk or take the Skyliner.</p>
-            <div class="dining-tag">
-              <span class="dining-pill">🤠 12:25 PM: Roundup Rodeo BBQ</span>
-              <span class="dining-pill">🎬 4:40 PM: Sci-Fi Dine-In Theater</span>
+          <div class="day-header-row">
+            <div class="day-badge">DAY 2 · SUN 11/01</div>
+            <div class="day-details">
+              <h3>Disney's Hollywood Studios</h3>
+              <p>Park hours: 9:00 AM – 9:00 PM (Early Entry 8:30 AM). Easy walk or Skyliner from BoardWalk.</p>
+              <div class="dining-tag">
+                <span class="dining-pill">🤠 12:25 PM: Roundup Rodeo BBQ</span>
+                <span class="dining-pill">🎬 4:40 PM: Sci-Fi Dine-In Theater</span>
+              </div>
+            </div>
+            <div class="crowd-pill med">Crowd 5/10</div>
+          </div>
+        </div>
+
+        <!-- DAY 3 -->
+        <div class="day-item">
+          <div class="day-header-row">
+            <div class="day-badge">DAY 3 · MON 11/02</div>
+            <div class="day-details">
+              <h3>Water Park / Animal Kingdom & Disney Springs</h3>
+              <p>Flexible day with evening dinner booked at Disney Springs (10:00 AM – 11:00 PM).</p>
+              <div class="dining-tag">
+                <span class="dining-pill quick">❄️ Lunch: Lottawatta Lodge (If Water Park)</span>
+                <span class="dining-pill">⚙️ 5:10 PM: The Edison Dinner (Disney Springs)</span>
+              </div>
+            </div>
+            <div class="crowd-pill low">Crowd 3/10</div>
+          </div>
+
+          <!-- Day 3 Option Cards -->
+          <div class="options-container">
+            <div class="option-card primary">
+              <div class="option-title"><span>Option A (Primary Plan)</span> <span>❄️ Blizzard Beach</span></div>
+              <div class="option-desc">Full relaxed morning/afternoon at Blizzard Beach. Great water park weather, warm mini donuts, and easy pacing.</div>
+              <div class="option-pro">✓ Best choice if Day 1 was spent resting at BoardWalk pool.</div>
+            </div>
+            <div class="option-card">
+              <div class="option-title"><span>Option B (Backup Plan)</span> <span>🦁 Animal Kingdom</span></div>
+              <div class="option-desc">Morning at Disney's Animal Kingdom (Kilimanjaro Safaris, Na'vi River Journey, Festival of the Lion King) before 5:10 PM Edison dinner.</div>
+              <div class="option-pro">✓ Great alternative if weather is cooler or water park was visited on Day 1.</div>
             </div>
           </div>
-          <div class="crowd-pill med">Crowd 5/10</div>
         </div>
 
+        <!-- DAY 4 -->
         <div class="day-item">
-          <div class="day-badge">DAY 3 · MON 11/02</div>
-          <div class="day-details">
-            <h3>Blizzard Beach Water Park & Disney Springs</h3>
-            <p>Water park morning/afternoon (showers & dressing rooms available on-site), followed by Disney Springs (10:00 AM – 11:00 PM).</p>
-            <div class="dining-tag">
-              <span class="dining-pill">⚙️ 5:10 PM: The Edison Dinner</span>
+          <div class="day-header-row">
+            <div class="day-badge">DAY 4 · TUE 11/03</div>
+            <div class="day-details">
+              <h3>EPCOT</h3>
+              <p>Park hours: 9:00 AM – 9:00 PM (Early Entry 8:30 AM). Step right in via International Gateway.</p>
+              <div class="dining-tag">
+                <span class="dining-pill">🐿️ 12:15 PM: Garden Grill</span>
+                <span class="dining-pill">🚀 5:30 PM: Space 220 Restaurant</span>
+              </div>
             </div>
+            <div class="crowd-pill low">Crowd 4/10</div>
           </div>
-          <div class="crowd-pill low">Crowd 3/10</div>
         </div>
 
+        <!-- DAY 5 -->
         <div class="day-item">
-          <div class="day-badge">DAY 4 · TUE 11/03</div>
-          <div class="day-details">
-            <h3>EPCOT</h3>
-            <p>Park hours: 9:00 AM – 9:00 PM (Early Entry 8:30 AM). Easy entrance via International Gateway.</p>
-            <div class="dining-tag">
-              <span class="dining-pill">🐿️ 12:15 PM: Garden Grill</span>
-              <span class="dining-pill">🚀 5:30 PM: Space 220 Restaurant</span>
+          <div class="day-header-row">
+            <div class="day-badge">DAY 5 · WED 11/04</div>
+            <div class="day-details">
+              <h3>Magic Kingdom Day</h3>
+              <p>Full park day with classic quick service dining planned.</p>
+              <div class="dining-tag">
+                <span class="dining-pill quick">🐟 Lunch: Columbia Harbour House</span>
+                <span class="dining-pill quick">🍔 Dinner: Cosmic Ray's or BoardWalk</span>
+              </div>
             </div>
+            <div class="crowd-pill med">Crowd 5/10</div>
           </div>
-          <div class="crowd-pill low">Crowd 4/10</div>
         </div>
 
+        <!-- DEPARTURE -->
         <div class="day-item">
-          <div class="day-badge">DAY 5 · WED 11/04</div>
-          <div class="day-details">
-            <h3>Magic Kingdom Day</h3>
-            <p>Full park day with classic quick service dining planned.</p>
-            <div class="dining-tag">
-              <span class="dining-pill quick">🐟 Lunch: Columbia Harbour House</span>
-              <span class="dining-pill quick">🍔 Dinner: Cosmic Ray's or BoardWalk</span>
+          <div class="day-header-row">
+            <div class="day-badge">DEPARTURE · THU 11/05</div>
+            <div class="day-details">
+              <h3>Check-Out Day</h3>
+              <p>Check out of BoardWalk Villas before 11:00 AM. Direct-to-Room / My Disney Experience app key active.</p>
             </div>
-          </div>
-          <div class="crowd-pill med">Crowd 5/10</div>
-        </div>
-
-        <div class="day-item">
-          <div class="day-badge">DEPARTURE · THU 11/05</div>
-          <div class="day-details">
-            <h3>Check-Out Day</h3>
-            <p>Check out of BoardWalk Villas before 11:00 AM. Direct-to-Room / My Disney Experience app key active.</p>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- NEW SECTION: Kid-Friendly Lightning Lane Guide -->
-    <section class="card" style="border-left: 5px solid var(--ll-blue);">
+    <!-- Kid-Friendly Lightning Lane Guide -->
+    <section id="lightning-lanes" class="card" style="border-left: 5px solid var(--ll-blue);">
       <h2>
         <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#0284c7">
           <circle cx="30" cy="30" r="22" /><circle cx="70" cy="30" r="22" /><circle cx="50" cy="62" r="30" />
@@ -312,7 +436,7 @@
         Kid-Friendly Lightning Lane Pass Guide (Ages ~6–7)
       </h2>
       <p style="font-size: 0.85rem; color: #475569; margin-bottom: 1rem;">
-        Top-priority selections optimized for kids around age 6 to save the maximum amount of line waiting for high-demand, age-appropriate attractions. As Disney Resort guests, you can pre-book these starting 7 days before check-in!
+        Top-priority selections optimized for kids around age 6 to save the maximum amount of line waiting for high-demand, age-appropriate attractions. As Disney Resort guests, pre-booking opens 7 days before check-in!
       </p>
 
       <div class="ll-grid">
@@ -351,11 +475,21 @@
           </ul>
         </div>
 
+        <!-- Animal Kingdom Backup -->
+        <div class="ll-card" style="border-color: #fde68a; background: #fffbeb;">
+          <h3 style="color: #b45309;">Animal Kingdom (Mon Backup) <span>🦁</span></h3>
+          <ul>
+            <li><strong>Na’vi River Journey:</strong> Beautiful, smooth boat ride in Pandora (no height limit). <span class="ll-badge tier-1">Tier 1 Choice</span></li>
+            <li><strong>Kilimanjaro Safaris:</strong> Best scheduled for morning hours when animals are most active. <span class="ll-badge tier-2">Tier 2 Choice</span></li>
+            <li><strong>Festival of the Lion King:</strong> World-class indoor musical show; Lightning Lane guarantees priority seating. <span class="ll-badge tier-2">Tier 2 Choice</span></li>
+          </ul>
+        </div>
+
       </div>
     </section>
 
     <!-- Plant-Based & Vegetarian Dining Options -->
-    <section class="card" style="border-left: 5px solid var(--plant-green);">
+    <section id="plant-based-dining" class="card" style="border-left: 5px solid var(--plant-green);">
       <h2>
         <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#2e7d32">
           <circle cx="30" cy="30" r="22" /><circle cx="70" cy="30" r="22" /><circle cx="50" cy="62" r="30" />
@@ -368,6 +502,28 @@
 
       <div class="veg-grid">
         
+        <!-- Blizzard Beach -->
+        <div class="veg-card" style="border-color: #7dd3fc; background: #f0f9ff;">
+          <h3 style="color: #0369a1; border-bottom-color: #bae6fd;">Blizzard Beach (Lottawatta Lodge & Kiosks) <span class="veg-tag tag-vg">Water Park Picks</span></h3>
+          <ul>
+            <li><strong>Impossible® Burger (Lottawatta Lodge):</strong> Served with plant-based chipotle mayonnaise, lettuce, and tomato with house-made chips. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Winter Harvest Salad (Lottawatta Lodge):</strong> Kale & lettuce blend, grape tomatoes, red radishes, rainbow carrots, raisins, quinoa, dates, and pear vinaigrette. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Hummus Snack Tray (Lottawatta Lodge & Avalunch):</strong> Red pepper hummus paired with fresh carrots, celery, pretzels, and mini pita bread. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Pineapple Dole Whip (Frostbite Freddie's):</strong> Refreshing, dairy-free frozen soft-serve perfect for water park days. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Mini Donuts (Joffrey’s Stand):</strong> Hot mini donuts (request plain cinnamon sugar or raspberry dip; chocolate/white chocolate dips contain dairy). <span class="veg-tag tag-v">Vegetarian</span></li>
+          </ul>
+        </div>
+
+        <!-- Animal Kingdom Backup Dining -->
+        <div class="veg-card" style="border-color: #fde68a; background: #fffbeb;">
+          <h3 style="color: #b45309; border-bottom-color: #fcd34d;">Animal Kingdom (Mon Backup Options) <span class="veg-tag tag-vg">Park Picks</span></h3>
+          <ul>
+            <li><strong>Satu'li Canteen (Pandora):</strong> Chili-Spiced Tofu Bowl with potato hash or grain blend and boba topping—one of the best quick service meals in Disney! <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Flame Tree Barbecue:</strong> Impossible™ Burrito Bowl topped with cilantro rice, black beans, and salsa. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Tamu Tamu Refreshments:</strong> Pineapple Dole Whip Cups and Dole Whip Floats. <span class="veg-tag tag-vg">Vegan</span></li>
+          </ul>
+        </div>
+
         <!-- Beaches & Cream -->
         <div class="veg-card">
           <h3>Beaches & Cream <span class="veg-tag tag-vg">Plant-Based Friendly</span></h3>
@@ -447,7 +603,7 @@
     </section>
 
     <!-- Flight Logistics -->
-    <section class="card">
+    <section id="flights" class="card">
       <h2>
         <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#e60012">
           <circle cx="30" cy="30" r="22" /><circle cx="70" cy="30" r="22" /><circle cx="50" cy="62" r="30" />
@@ -485,7 +641,7 @@
     </section>
 
     <!-- Checklist -->
-    <section class="card">
+    <section id="checklist" class="card">
       <div class="checklist-header">
         <h2>
           <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#e60012">
