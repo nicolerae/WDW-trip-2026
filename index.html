@@ -22,6 +22,10 @@
       --option-amber: #d97706;
       --option-bg: #fffbeb;
       --option-border: #fde68a;
+      --fireworks-purple: #6b21a8;
+      --fireworks-bg: #f3e8ff;
+      --jetblue-blue: #00205b;
+      --jetblue-light: #e8f4fd;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background-color: var(--bg-gray); color: var(--mickey-dark); line-height: 1.5; padding-bottom: 3rem; }
@@ -161,6 +165,7 @@
     .dining-tag { margin-top: 0.4rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .dining-pill { background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 6px; }
     .dining-pill.quick { background: #f0fdf4; border: 1px solid #bbf7d0; color: #15803d; }
+    .dining-pill.show { background: var(--fireworks-bg); border: 1px solid #e9d5ff; color: var(--fireworks-purple); }
     .crowd-pill { margin-left: auto; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 999px; white-space: nowrap; }
     .crowd-pill.low { background: #dcfce7; color: #15803d; }
     .crowd-pill.med { background: #fef9c3; color: #a16207; }
@@ -200,7 +205,6 @@
     .option-card.primary .option-title { color: #0369a1; }
     .option-desc { color: #334155; line-height: 1.35; }
     .option-pro { margin-top: 0.35rem; color: #15803d; font-weight: 600; font-size: 0.78rem; }
-    .option-con { color: #b91c1c; font-weight: 600; font-size: 0.78rem; }
 
     /* Vegetarian / Vegan Section */
     .veg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1rem; margin-top: 0.5rem; }
@@ -228,15 +232,11 @@
     /* Flights */
     .flight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 0.5rem; margin-bottom: 0.5rem; }
     .flight-card { border: 1px solid var(--border); padding: 1rem; border-radius: 12px; background: white; }
-    .flight-card.best-fit { border: 2px solid var(--mickey-yellow); background: #fffdf0; }
-    .flight-card .badge { background: var(--mickey-black); color: var(--mickey-yellow); }
-    .flight-card .badge.secondary { background: #64748b; color: white; }
+    .flight-card.best-fit { border: 2px solid var(--jetblue-blue); background: var(--jetblue-light); }
+    .flight-card .badge { background: var(--jetblue-blue); color: var(--mickey-white); }
     .flight-times { margin: 0.5rem 0; font-size: 0.9rem; }
 
     /* Checklist */
-    .checklist-header { margin-bottom: 1rem; }
-    .progress-bar-container { width: 100%; height: 10px; background: var(--border); border-radius: 999px; overflow: hidden; margin: 0.5rem 0; }
-    .progress-bar { width: 0%; height: 100%; background: var(--mickey-red); transition: width 0.3s ease; }
     .checklist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
     .checklist-group h3 { font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--mickey-black); border-bottom: 1px dashed var(--border); padding-bottom: 0.25rem; }
     .check-item { display: block; font-size: 0.85rem; margin-bottom: 0.4rem; cursor: pointer; user-select: none; }
@@ -291,33 +291,33 @@
         <span class="stat-label">Final Payment Deadline</span>
       </div>
       <div class="stat">
-        <span class="stat-value">6 Bookings</span>
-        <span class="stat-label">Dining Reservations Confirmed</span>
+        <span class="stat-value">6 Bookings + Nighttime Show</span>
+        <span class="stat-label">Dining & Fireworks Confirmed</span>
       </div>
     </section>
 
     <!-- Flight Logistics -->
     <section id="flights" class="card">
       <h2>
-        <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#e60012">
+        <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#00205b">
           <circle cx="30" cy="30" r="22" /><circle cx="70" cy="30" r="22" /><circle cx="50" cy="62" r="30" />
         </svg>
-        Confirmed Flight Details (Southwest Roundtrip)
+        Confirmed Flight Details (JetBlue Airways)
       </h2>
       
       <div class="flight-grid">
         <div class="flight-card best-fit">
-          <span class="badge">OUTBOUND · SOUTHWEST #3501</span>
-          <div class="flight-times"><strong>BDL 6:15 AM</strong> → <strong>MCO 9:10 AM</strong> (2h 55m Nonstop)</div>
-          <p style="font-size: 0.8rem; color: #475569;">Lands at 9:10 AM! Perfect timing to drop luggage at BoardWalk and enjoy a relaxed resort afternoon.</p>
+          <span class="badge">OUTBOUND · JETBLUE #B6 737</span>
+          <div class="flight-times"><strong>BDL 7:30 AM</strong> → <strong>MCO 10:45 AM</strong> (3h 15m Non-stop)[cite: 4]</div>
+          <p style="font-size: 0.8rem; color: #475569;">Lands at 10:45 AM![cite: 4] Perfect for heading straight to BoardWalk Villas, dropping luggage, and enjoying lunch.</p>
         </div>
         <div class="flight-card best-fit">
-          <span class="badge">RETURN · SOUTHWEST #448</span>
-          <div class="flight-times"><strong>MCO 11:10 AM</strong> → <strong>BDL 1:50 PM</strong> (2h 40m Nonstop)</div>
-          <p style="font-size: 0.8rem; color: #475569;">Smooth morning departure home; allows easy resort check-out before heading to the airport.</p>
+          <span class="badge">RETURN · JETBLUE #B6 138</span>
+          <div class="flight-times"><strong>MCO 12:13 PM</strong> → <strong>BDL 3:00 PM</strong> (2h 47m Non-stop)[cite: 4]</div>
+          <p style="font-size: 0.8rem; color: #475569;">Provides extra morning cushion at the resort before taking a mid-day flight home[cite: 4].</p>
         </div>
       </div>
-      <p style="font-size: 0.82rem; color: #64748b; margin-top: 0.25rem; text-align: center;"><strong>Selected Total:</strong> $1,490.37 (Includes 6 Free Checked Bags & Family Boarding after Group A)</p>
+      <p style="font-size: 0.82rem; color: #64748b; margin-top: 0.25rem; text-align: center;"><strong>Selected Cart Total:</strong> $908.40 (or 90,840 pts) for 3 Travelers[cite: 4]</p>
     </section>
 
     <!-- Flexible 5-Day Plan -->
@@ -336,7 +336,7 @@
             <div class="day-badge">DAY 1 · SAT 10/31</div>
             <div class="day-details">
               <h3>Arrival & Relaxed BoardWalk Resort Day</h3>
-              <p>Early morning departure on Southwest #3501 (6:15 AM → 9:10 AM). Drop bags at BoardWalk Villas, rent Surrey bikes, go swimming, and take it easy!</p>
+              <p>Morning flight on JetBlue #B6 737 (7:30 AM → 10:45 AM)[cite: 4]. Arrive at BoardWalk Villas, drop off bags, rent Surrey bikes, go swimming, and enjoy the afternoon!</p>
               <div class="dining-tag">
                 <span class="dining-pill">🍦 Beaches & Cream Soda Shop (Lunch Slot)</span>
               </div>
@@ -347,8 +347,8 @@
           <div class="options-container">
             <div class="option-card primary">
               <div class="option-title"><span>Primary Plan</span> <span>🚴 Resort Pool & Bike Rentals</span></div>
-              <div class="option-desc">Stay at BoardWalk Villas, head to the pool, rent Surrey bikes around Crescent Lake, relax, and enjoy lunch at <strong>Beaches & Cream</strong>.</div>
-              <div class="option-pro">✓ Low-stress, ultra-relaxing arrival day after an early flight!</div>
+              <div class="option-desc">Check in at BoardWalk Villas, head to the pool, rent Surrey bikes around Crescent Lake, relax, and enjoy lunch at <strong>Beaches & Cream</strong>.</div>
+              <div class="option-pro">✓ Smooth arrival with a 10:45 AM landing—no early morning rush![cite: 4]</div>
             </div>
           </div>
         </div>
@@ -419,11 +419,12 @@
           <div class="day-header-row">
             <div class="day-badge">DAY 5 · WED 11/04</div>
             <div class="day-details">
-              <h3>Magic Kingdom Day</h3>
-              <p>Full park day with classic quick service dining planned.</p>
+              <h3>Magic Kingdom Day & Fireworks Extravaganza</h3>
+              <p>Full park day with classic quick service dining planned and the evening capped by the signature fireworks show down Main Street, U.S.A[cite: 3]!</p>
               <div class="dining-tag">
                 <span class="dining-pill quick">🐟 Lunch: Columbia Harbour House</span>
                 <span class="dining-pill quick">🍔 Dinner: Cosmic Ray's or BoardWalk</span>
+                <span class="dining-pill show">🎆 8:00 PM: Happily Ever After Fireworks (Magic Kingdom)</span>
               </div>
             </div>
             <div class="crowd-pill med">Crowd 5/10</div>
@@ -436,7 +437,7 @@
             <div class="day-badge">DEPARTURE · THU 11/05</div>
             <div class="day-details">
               <h3>Check-Out & Travel Day</h3>
-              <p>Check out of BoardWalk Villas. Return flight on Southwest #448 (11:10 AM → 1:50 PM). Depart resort for airport ~8:30 AM.</p>
+              <p>Check out of BoardWalk Villas. Return flight on JetBlue #B6 138 (12:13 PM → 3:00 PM)[cite: 4]. Head to airport around 9:30 AM.</p>
             </div>
           </div>
         </div>
@@ -599,9 +600,10 @@
       <div class="checklist-grid">
         <div class="checklist-group">
           <h3>Reservations & Travel</h3>
-          <label class="check-item"><input type="checkbox" checked> Book Flights (Southwest #3501 / #448)</label>
+          <label class="check-item"><input type="checkbox" checked> Book Flights (JetBlue #B6 737 / #B6 138)[cite: 4]</label>
           <label class="check-item"><input type="checkbox" checked> BoardWalk Villas Reservation</label>
           <label class="check-item"><input type="checkbox" checked> Dining Reservations Confirmed</label>
+          <label class="check-item"><input type="checkbox" checked> Fireworks Scheduled (Happily Ever After at 8:00 PM)[cite: 3]</label>
         </div>
         <div class="checklist-group">
           <h3>7 Days Prior</h3>
