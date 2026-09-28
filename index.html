@@ -26,6 +26,9 @@
       --fireworks-bg: #f3e8ff;
       --jetblue-blue: #00205b;
       --jetblue-light: #e8f4fd;
+      --stroller-orange: #ea580c;
+      --stroller-bg: #fff7ed;
+      --stroller-border: #ffedd5;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background-color: var(--bg-gray); color: var(--mickey-dark); line-height: 1.5; padding-bottom: 3rem; }
@@ -166,9 +169,57 @@
     .dining-pill { background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 6px; }
     .dining-pill.quick { background: #f0fdf4; border: 1px solid #bbf7d0; color: #15803d; }
     .dining-pill.show { background: var(--fireworks-bg); border: 1px solid #e9d5ff; color: var(--fireworks-purple); }
+    .dining-pill.stroller { background: var(--stroller-bg); border: 1px solid var(--stroller-border); color: var(--stroller-orange); }
     .crowd-pill { margin-left: auto; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 999px; white-space: nowrap; }
     .crowd-pill.low { background: #dcfce7; color: #15803d; }
     .crowd-pill.med { background: #fef9c3; color: #a16207; }
+
+    /* Stroller Rental Box */
+    .stroller-card {
+      border: 2px solid var(--stroller-orange);
+      background: var(--stroller-bg);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-top: 0.5rem;
+    }
+    .stroller-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #fed7aa;
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .stroller-header h3 {
+      color: #c2410c;
+      font-size: 1.1rem;
+    }
+    .stroller-price {
+      background: var(--stroller-orange);
+      color: white;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    .stroller-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .stroller-info-block {
+      font-size: 0.85rem;
+      color: #431407;
+      line-height: 1.45;
+    }
+    .stroller-info-block strong {
+      color: #9a3412;
+    }
+    .stroller-info-block ul {
+      list-style-type: square;
+      padding-left: 1.2rem;
+      margin-top: 0.3rem;
+    }
 
     /* Day Options / Backup Cards */
     .options-container {
@@ -248,8 +299,8 @@
     <div class="header-container">
       <div class="badge">FALL 2026 · ORLANDO, FL</div>
       <h1>Disney World Family Trip</h1>
-      <p class="subtitle">Oct 31 – Nov 5, 2026 · 3 Guests[cite: 5]</p>
-      <div class="resort-tag">🏨 Disney's BoardWalk Villas (EPCOT Resort Area)[cite: 5]</div>
+      <p class="subtitle">Oct 31 – Nov 5, 2026 · 3 Guests</p>
+      <div class="resort-tag">🏨 Disney's BoardWalk Villas (EPCOT Resort Area)</div>
       
       <!-- Live Countdown Calendar -->
       <div class="countdown-container">
@@ -270,6 +321,7 @@
       <!-- Quick Index Links -->
       <nav class="dashboard-nav">
         <a href="#flights" class="nav-link">✈️ Flights</a>
+        <a href="#stroller" class="nav-link">🛒 Stroller Rental</a>
         <a href="#itinerary" class="nav-link">🗓️ Confirmed Itinerary</a>
         <a href="#lightning-lanes" class="nav-link">⚡ Lightning Lanes</a>
         <a href="#plant-based-dining" class="nav-link">🌱 Plant-Based Guide</a>
@@ -284,15 +336,19 @@
     <section class="card stat-card">
       <div class="stat">
         <span class="stat-value">BoardWalk Villas</span>
-        <span class="stat-label">Conf #43292549[cite: 5]</span>
+        <span class="stat-label">Conf #43292549</span>
       </div>
       <div class="stat">
         <span class="stat-value">$4,800.00</span>
-        <span class="stat-label">Remaining Balance (Due Oct 1)[cite: 5]</span>
+        <span class="stat-label">Remaining Balance (Due Oct 1)</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">BOB Revolution Single</span>
+        <span class="stat-label">Stroller Reserved ($95.00)</span>
       </div>
       <div class="stat">
         <span class="stat-value">6 Reservations + 3 Shows</span>
-        <span class="stat-label">Dining & Fireworks Included[cite: 5]</span>
+        <span class="stat-label">Dining & Fireworks Included</span>
       </div>
     </section>
 
@@ -308,16 +364,51 @@
       <div class="flight-grid">
         <div class="flight-card best-fit">
           <span class="badge">OUTBOUND · JETBLUE #B6 737</span>
-          <div class="flight-times"><strong>BDL 7:30 AM</strong> → <strong>MCO 10:45 AM</strong> (3h 15m Non-stop)[cite: 4]</div>
-          <p style="font-size: 0.8rem; color: #475569;">Lands at 10:45 AM![cite: 4] Arrive at BoardWalk, drop bags, and head over to 2:30 PM Beaches & Cream lunch[cite: 5]!</p>
+          <div class="flight-times"><strong>BDL 7:30 AM</strong> → <strong>MCO 10:45 AM</strong> (3h 15m Non-stop)</div>
+          <p style="font-size: 0.8rem; color: #475569;">Lands at 10:45 AM! Arrive at BoardWalk, drop bags, and head over to 2:30 PM Beaches & Cream lunch!</p>
         </div>
         <div class="flight-card best-fit">
           <span class="badge">RETURN · JETBLUE #B6 138</span>
-          <div class="flight-times"><strong>MCO 12:13 PM</strong> → <strong>BDL 3:00 PM</strong> (2h 47m Non-stop)[cite: 4]</div>
-          <p style="font-size: 0.8rem; color: #475569;">Perfect timing after 11:00 AM resort check-out[cite: 5]!</p>
+          <div class="flight-times"><strong>MCO 12:13 PM</strong> → <strong>BDL 3:00 PM</strong> (2h 47m Non-stop)</div>
+          <p style="font-size: 0.8rem; color: #475569;">Perfect timing after 11:00 AM resort check-out!</p>
         </div>
       </div>
-      <p style="font-size: 0.82rem; color: #64748b; margin-top: 0.25rem; text-align: center;"><strong>Cart Total:</strong> $908.40 (or 90,840 pts) for 3 Travelers[cite: 4]</p>
+      <p style="font-size: 0.82rem; color: #64748b; margin-top: 0.25rem; text-align: center;"><strong>Cart Total:</strong> $908.40 (or 90,840 pts) for 3 Travelers</p>
+    </section>
+
+    <!-- Kingdom Strollers Rental Section -->
+    <section id="stroller" class="card" style="border-left: 5px solid var(--stroller-orange);">
+      <h2>
+        <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#ea580c">
+          <circle cx="30" cy="30" r="22" /><circle cx="70" cy="30" r="22" /><circle cx="50" cy="62" r="30" />
+        </svg>
+        Stroller Rental Confirmation (Kingdom Strollers)
+      </h2>
+      
+      <div class="stroller-card">
+        <div class="stroller-header">
+          <h3>🛒 BOB Revolution Single Stroller[cite: 5]</h3>
+          <span class="stroller-price">$95.00 Total[cite: 5]</span>
+        </div>
+        <div class="stroller-grid">
+          <div class="stroller-info-block">
+            <p><strong>📍 Delivery Meeting:</strong> Saturday, 10/31/2026 between 06:00 PM – 07:00 PM[cite: 4]</p>
+            <p><strong>📍 Drop-Off / Return Meeting:</strong> Thursday, 11/05/2026 at 08:30 AM[cite: 4]</p>
+            <p><strong>📍 Location:</strong> Disney's BoardWalk — Area next to the valet station outside the main lobby[cite: 4].</p>
+            <p style="margin-top: 0.4rem;"><strong>⚠️ Instructions:</strong> Must meet rep in person (wearing an orange shirt) for both delivery and pickup[cite: 4]. Driver will text prior to arrival[cite: 4].</p>
+          </div>
+          <div class="stroller-info-block">
+            <p><strong>Specifications & Features:</strong>[cite: 5]</p>
+            <ul>
+              <li>Easy two-step folding & 42″ adjustable handlebar[cite: 5]</li>
+              <li>Large clam shell canopy & fully reclining seat[cite: 5]</li>
+              <li>16″ air-filled rear wheels for smooth pushing[cite: 5]</li>
+              <li>Best for kids up to 48″ / 70 lb weight capacity[cite: 5]</li>
+              <li>Meets all Disney size requirements[cite: 5]</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Updated Official Itinerary -->
@@ -336,9 +427,10 @@
             <div class="day-badge">DAY 1 · SAT 10/31</div>
             <div class="day-details">
               <h3>Arrival & Disney's BoardWalk Check-In</h3>
-              <p>Check in after 4:00 PM at Disney's BoardWalk Villas (EPCOT Resort Area)[cite: 5]. Direct-to-Room service enabled[cite: 5].</p>
+              <p>Check in after 4:00 PM at Disney's BoardWalk Villas (EPCOT Resort Area). Direct-to-Room service enabled.</p>
               <div class="dining-tag">
-                <span class="dining-pill">🍦 2:30 PM: Beaches & Cream Soda Shop Lunch (Conf #356244678716)</span>[cite: 5]
+                <span class="dining-pill">🍦 2:30 PM: Beaches & Cream Soda Shop Lunch (Conf #356244678716)</span>
+                <span class="dining-pill stroller">🛒 6:00–7:00 PM: Meet Kingdom Strollers at Valet Station[cite: 4]</span>
               </div>
             </div>
             <div class="crowd-pill low">Arrival Day</div>
@@ -351,10 +443,10 @@
             <div class="day-badge">DAY 2 · SUN 11/01</div>
             <div class="day-details">
               <h3>Disney's Hollywood Studios</h3>
-              <p>Park hours: 9:00 AM – 9:00 PM (Early Entry 8:30 AM – 9:00 AM)[cite: 5]. Staying at BoardWalk Villas[cite: 5].</p>
+              <p>Park hours: 9:00 AM – 9:00 PM (Early Entry 8:30 AM – 9:00 AM). Staying at BoardWalk Villas.</p>
               <div class="dining-tag">
-                <span class="dining-pill">🤠 12:25 PM: Roundup Rodeo BBQ Lunch (Conf #356249953893)</span>[cite: 5]
-                <span class="dining-pill">🎬 4:40 PM: Sci-Fi Dine-In Theater Dinner (Conf #356249953875)</span>[cite: 5]
+                <span class="dining-pill">🤠 12:25 PM: Roundup Rodeo BBQ Lunch (Conf #356249953893)</span>
+                <span class="dining-pill">🎬 4:40 PM: Sci-Fi Dine-In Theater Dinner (Conf #356249953875)</span>
               </div>
             </div>
             <div class="crowd-pill med">Crowd 5/10</div>
@@ -367,10 +459,10 @@
             <div class="day-badge">DAY 3 · MON 11/02</div>
             <div class="day-details">
               <h3>EPCOT & Disney Springs Evening + Fantasmic!</h3>
-              <p>EPCOT Park hours: 9:00 AM – 9:00 PM (Early Entry 8:30 AM – 9:00 AM, Extended Evening Hours 9:00 PM – 11:00 PM)[cite: 5]. Disney Springs hours: 10:00 AM – 11:00 PM[cite: 5]. Fantasmic! show included[cite: 5].</p>
+              <p>EPCOT Park hours: 9:00 AM – 9:00 PM (Early Entry 8:30 AM – 9:00 AM, Extended Evening Hours 9:00 PM – 11:00 PM). Disney Springs hours: 10:00 AM – 11:00 PM. Fantasmic! show included.</p>
               <div class="dining-tag">
-                <span class="dining-pill">⚙️ 5:10 PM: The Edison Dinner at Disney Springs (Conf #356244693481)</span>[cite: 5]
-                <span class="dining-pill show">✨ Fantasmic! Nighttime Show</span>[cite: 5]
+                <span class="dining-pill">⚙️ 5:10 PM: The Edison Dinner at Disney Springs (Conf #356244693481)</span>
+                <span class="dining-pill show">✨ Fantasmic! Nighttime Show</span>
               </div>
             </div>
             <div class="crowd-pill low">Crowd 4/10</div>
@@ -383,11 +475,11 @@
             <div class="day-badge">DAY 4 · TUE 11/03</div>
             <div class="day-details">
               <h3>EPCOT Day & Luminous Fireworks</h3>
-              <p>Park hours: 9:00 AM – 9:00 PM (Early Entry 8:30 AM – 9:00 AM)[cite: 5].</p>
+              <p>Park hours: 9:00 AM – 9:00 PM (Early Entry 8:30 AM – 9:00 AM).</p>
               <div class="dining-tag">
-                <span class="dining-pill">🐿️ 12:15 PM: Chip 'n' Dale's Harvest Feast at Garden Grill (Conf #356244691274)</span>[cite: 5]
-                <span class="dining-pill">🚀 Space 220 Dinner</span>[cite: 5]
-                <span class="dining-pill show">🎆 Luminous The Symphony of Us (EPCOT Nighttime Spectacular)</span>[cite: 5]
+                <span class="dining-pill">🐿️ 12:15 PM: Chip 'n' Dale's Harvest Feast at Garden Grill (Conf #356244691274)</span>
+                <span class="dining-pill">🚀 Space 220 Dinner</span>
+                <span class="dining-pill show">🎆 Luminous The Symphony of Us (EPCOT Nighttime Spectacular)</span>
               </div>
             </div>
             <div class="crowd-pill low">Crowd 4/10</div>
@@ -417,7 +509,10 @@
             <div class="day-badge">DEPARTURE · THU 11/05</div>
             <div class="day-details">
               <h3>Check-Out & Return Travel</h3>
-              <p>Check out before 11:00 AM at Disney's BoardWalk Villas[cite: 5]. JetBlue return flight #B6 138 (12:13 PM → 3:00 PM)[cite: 4].</p>
+              <p>Check out before 11:00 AM at Disney's BoardWalk Villas. JetBlue return flight #B6 138 (12:13 PM → 3:00 PM).</p>
+              <div class="dining-tag">
+                <span class="dining-pill stroller">🛒 8:30 AM: Return Stroller to Kingdom Strollers at Valet Station[cite: 4]</span>
+              </div>
             </div>
           </div>
         </div>
@@ -431,10 +526,10 @@
         <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#0284c7">
           <circle cx="30" cy="30" r="22" /><circle cx="70" cy="30" r="22" /><circle cx="50" cy="62" r="30" />
         </svg>
-        Lightning Lane Pass Guide (For Bowie - Age 6)[cite: 5]
+        Lightning Lane Pass Guide (For Bowie - Age 6)
       </h2>
       <p style="font-size: 0.85rem; color: #475569; margin-bottom: 1rem;">
-        Top-priority selections optimized for age 6[cite: 5] to minimize standby waiting. Pre-booking opens 7 days before check-in for Disney Resort guests[cite: 5]!
+        Top-priority selections optimized for age 6 to minimize standby waiting. Pre-booking opens 7 days before check-in for Disney Resort guests!
       </p>
 
       <div class="ll-grid">
@@ -477,8 +572,8 @@
         <div class="ll-card" style="border-color: #fde68a; background: #fffbeb;">
           <h3 style="color: #b45309;">Nighttime Spectaculars <span>🎆</span></h3>
           <ul>
-            <li><strong>Fantasmic! (Mon Nov 2):</strong> Live nighttime show at Hollywood Studios[cite: 5].</li>
-            <li><strong>Luminous The Symphony of Us (Tue Nov 3):</strong> Fireworks at EPCOT World Showcase[cite: 5].</li>
+            <li><strong>Fantasmic! (Mon Nov 2):</strong> Live nighttime show at Hollywood Studios.</li>
+            <li><strong>Luminous The Symphony of Us (Tue Nov 3):</strong> Fireworks at EPCOT World Showcase.</li>
             <li><strong>Happily Ever After (Wed Nov 4):</strong> 8:00 PM Magic Kingdom Castle Fireworks.</li>
           </ul>
         </div>
@@ -499,7 +594,7 @@
         
         <!-- Beaches & Cream -->
         <div class="veg-card">
-          <h3>Beaches & Cream (Sat 2:30 PM)[cite: 5] <span class="veg-tag tag-vg">Plant-Based Friendly</span></h3>
+          <h3>Beaches & Cream (Sat 2:30 PM) <span class="veg-tag tag-vg">Plant-Based Friendly</span></h3>
           <ul>
             <li><strong>Impossible Burger:</strong> Plant-based patty on an allergy-friendly bun with plant mayo. <span class="veg-tag tag-vg">Vegan</span></li>
             <li><strong>Loaded Plant-Based Tots:</strong> Tots topped with plant-based chili, dairy-free cheese, and sour cream. <span class="veg-tag tag-vg">Vegan</span></li>
@@ -510,7 +605,7 @@
 
         <!-- Roundup Rodeo BBQ -->
         <div class="veg-card">
-          <h3>Roundup Rodeo BBQ (Sun 12:25 PM)[cite: 5] <span class="veg-tag tag-vg">Dedicated Veg Skillet</span></h3>
+          <h3>Roundup Rodeo BBQ (Sun 12:25 PM) <span class="veg-tag tag-vg">Dedicated Veg Skillet</span></h3>
           <ul>
             <li><strong>Trixie’s Plant-Based Trio:</strong> BBQ platter featuring Combat Crisp Sausage, Slow-smoked Cauliflower, and Rip-Roarin' Jackfruit. <span class="veg-tag tag-vg">Vegan</span></li>
             <li><strong>Rootin’ Tootin’ Tomato Salad & Veggie Slaw:</strong> Fresh cucumbers, tomatoes, and "The Claw!" crunchy veggie slaw. <span class="veg-tag tag-vg">Vegan</span></li>
@@ -521,7 +616,7 @@
 
         <!-- Sci-Fi Dine-In -->
         <div class="veg-card">
-          <h3>Sci-Fi Dine-In Theater (Sun 4:40 PM)[cite: 5] <span class="veg-tag tag-vg">Fan Favorite</span></h3>
+          <h3>Sci-Fi Dine-In Theater (Sun 4:40 PM) <span class="veg-tag tag-vg">Fan Favorite</span></h3>
           <ul>
             <li><strong>Flying Saucer Impossible Burger:</strong> Plant-based burger topped with grilled portobello mushroom steak and cashew mozzarella. <span class="veg-tag tag-vg">Vegan</span></li>
             <li><strong>Spinach & Artichoke Dip:</strong> Creamy cashew-based dip served with warm tortilla chips. <span class="veg-tag tag-vg">Vegan</span></li>
@@ -531,7 +626,7 @@
 
         <!-- The Edison -->
         <div class="veg-card">
-          <h3>The Edison (Mon 5:10 PM)[cite: 5] <span class="veg-tag tag-v">Customizable</span></h3>
+          <h3>The Edison (Mon 5:10 PM) <span class="veg-tag tag-v">Customizable</span></h3>
           <ul>
             <li><strong>The Beyond Burger:</strong> Plant-based burger patty served with lettuce, tomato, pickles, and fries. <span class="veg-tag tag-v">Vegetarian</span></li>
             <li><strong>Beyond Sausage & Pepper Pasta:</strong> Hearty pasta dish with plant-based sausage and savory marinara sauce. <span class="veg-tag tag-v">Vegetarian</span></li>
@@ -540,7 +635,7 @@
 
         <!-- Garden Grill -->
         <div class="veg-card">
-          <h3>Garden Grill (Tue 12:15 PM)[cite: 5] <span class="veg-tag tag-vg">Family Style</span></h3>
+          <h3>Garden Grill (Tue 12:15 PM) <span class="veg-tag tag-vg">Family Style</span></h3>
           <ul>
             <li><strong>Harvest Feast Plant-Based Platter:</strong> Veggie loaf with garden gravy, roasted potatoes, and fresh farm vegetables. <span class="veg-tag tag-vg">Vegan</span></li>
             <li><strong>Berry Shortcake:</strong> Non-dairy shortcake dessert. <span class="veg-tag tag-vg">Vegan</span></li>
@@ -549,7 +644,7 @@
 
         <!-- Space 220 -->
         <div class="veg-card">
-          <h3>Space 220 (Tue Dinner)[cite: 5] <span class="veg-tag tag-v">Prix Fixe Options</span></h3>
+          <h3>Space 220 (Tue Dinner) <span class="veg-tag tag-v">Prix Fixe Options</span></h3>
           <ul>
             <li><strong>Space Greens / Centauri Caesar:</strong> Fresh plant-based salad starters. <span class="veg-tag tag-v">Vegetarian</span></li>
             <li><strong>Space Station Stuffed Mushrooms / Roasted Cauliflower Steak:</strong> Flavorful plant-forward entrees. <span class="veg-tag tag-vg">Vegan</span></li>
@@ -582,16 +677,18 @@
       <div class="checklist-grid">
         <div class="checklist-group">
           <h3>Reservations & Travel</h3>
-          <label class="check-item"><input type="checkbox" checked> Book Flights (JetBlue #B6 737 / #B6 138)[cite: 4]</label>
-          <label class="check-item"><input type="checkbox" checked> BoardWalk Villas Reservation (Conf #43292549)[cite: 5]</label>
-          <label class="check-item"><input type="checkbox" checked> Table Service Dining Confirmed (Beaches & Cream, Roundup Rodeo, Sci-Fi, Edison, Garden Grill, Space 220)[cite: 5]</label>
-          <label class="check-item"><input type="checkbox" checked> All Nighttime Shows Scheduled (Fantasmic!, Luminous, Happily Ever After)[cite: 5]</label>
+          <label class="check-item"><input type="checkbox" checked> Book Flights (JetBlue #B6 737 / #B6 138)</label>
+          <label class="check-item"><input type="checkbox" checked> BoardWalk Villas Reservation (Conf #43292549)</label>
+          <label class="check-item"><input type="checkbox" checked> Kingdom Strollers BOB Revolution Single Reserved ($95.00)[cite: 5]</label>
+          <label class="check-item"><input type="checkbox" checked> Table Service Dining Confirmed (Beaches & Cream, Roundup Rodeo, Sci-Fi, Edison, Garden Grill, Space 220)</label>
+          <label class="check-item"><input type="checkbox" checked> All Nighttime Shows Scheduled (Fantasmic!, Luminous, Happily Ever After)</label>
         </div>
         <div class="checklist-group">
           <h3>Upcoming Action Items</h3>
-          <label class="check-item"><input type="checkbox"> Pay Remaining Resort Balance ($4,800.00 due Thursday, Oct 1, 2026)[cite: 5]</label>
-          <label class="check-item"><input type="checkbox"> Complete Direct-to-Room Online Check-In in My Disney Experience App[cite: 5]</label>
+          <label class="check-item"><input type="checkbox"> Pay Remaining Resort Balance ($4,800.00 due Thursday, Oct 1, 2026)</label>
+          <label class="check-item"><input type="checkbox"> Complete Direct-to-Room Online Check-In in My Disney Experience App</label>
           <label class="check-item"><input type="checkbox"> Pre-book Lightning Lane Passes (7 days prior to check-in)</label>
+          <label class="check-item"><input type="checkbox"> Meet Stroller Representative at BoardWalk Valet Station (Sat 10/31 6:00–7:00 PM)[cite: 4]</label>
         </div>
       </div>
     </section>
