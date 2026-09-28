@@ -19,9 +19,6 @@
       --plant-bg: #f1f8e9;
       --ll-blue: #0284c7;
       --ll-bg: #f0f9ff;
-      --option-amber: #d97706;
-      --option-bg: #fffbeb;
-      --option-border: #fde68a;
       --fireworks-purple: #6b21a8;
       --fireworks-bg: #f3e8ff;
       --jetblue-blue: #00205b;
@@ -33,14 +30,12 @@
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background-color: var(--bg-gray); color: var(--mickey-dark); line-height: 1.5; padding-bottom: 3rem; }
     
-    /* Header & Mickey Ears Motif */
     .dashboard-header { 
       background: linear-gradient(135deg, var(--mickey-black) 0%, #2a2a35 100%); 
       color: var(--mickey-white); 
       padding: 2.5rem 1.5rem; 
       text-align: center; 
       border-bottom: 6px solid var(--mickey-red);
-      position: relative;
     }
     .badge { 
       display: inline-block; 
@@ -57,7 +52,6 @@
     .subtitle { opacity: 0.9; font-size: 1.05rem; margin-top: 0.25rem; color: #d1d5db; }
     .resort-tag { font-size: 0.95rem; color: #fef9c3; font-weight: 700; margin-top: 0.4rem; }
     
-    /* Live Countdown Box */
     .countdown-container {
       background: var(--mickey-red);
       color: white;
@@ -67,48 +61,14 @@
       border-radius: 16px;
       box-shadow: 0 4px 12px rgba(230, 0, 18, 0.3);
       border: 2px solid var(--mickey-yellow);
-      position: relative;
     }
-    .mickey-logo {
-      width: 42px;
-      height: 42px;
-      margin: 0 auto 0.25rem;
-      display: block;
-      filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));
-    }
-    .countdown-title {
-      font-size: 0.85rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 0.5rem;
-      color: var(--mickey-yellow);
-    }
-    .countdown-timer {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
-    .time-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 55px;
-    }
-    .time-num {
-      font-size: 1.75rem;
-      font-weight: 800;
-      line-height: 1;
-    }
-    .time-label {
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-top: 0.25rem;
-      opacity: 0.9;
-    }
+    .mickey-logo { width: 42px; height: 42px; margin: 0 auto 0.25rem; display: block; filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2)); }
+    .countdown-title { font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; color: var(--mickey-yellow); }
+    .countdown-timer { display: flex; justify-content: center; gap: 1rem; }
+    .time-block { display: flex; flex-direction: column; align-items: center; min-width: 55px; }
+    .time-num { font-size: 1.75rem; font-weight: 800; line-height: 1; }
+    .time-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.25rem; opacity: 0.9; }
 
-    /* Dashboard Main Grid */
     .dashboard-grid { max-width: 1000px; margin: 2rem auto 0; padding: 0 1rem; display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
     .card { background: var(--card-bg); border-radius: 16px; padding: 1.5rem; border: 1px solid var(--border); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04); }
     .card h2 { 
@@ -121,43 +81,12 @@
       align-items: center; 
       gap: 0.5rem; 
     }
-    .section-mickey-icon {
-      width: 22px;
-      height: 22px;
-    }
+    .section-mickey-icon { width: 22px; height: 22px; }
 
-    /* Stats Row */
-    .stat-card { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); text-align: center; gap: 1rem; background: #fff8f8; border-left: 5px solid var(--mickey-red); }
-    .stat-value { display: block; font-size: 1.15rem; font-weight: 800; color: var(--mickey-red); }
-    .stat-label { font-size: 0.85rem; color: #64748b; font-weight: 600; }
+    .dashboard-nav { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.15); }
+    .nav-link { background: rgba(255,255,255,0.12); color: var(--mickey-white); text-decoration: none; padding: 0.35rem 0.75rem; border-radius: 20px; font-size: 0.78rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.2); }
+    .nav-link:hover { background: var(--mickey-yellow); color: var(--mickey-black); }
 
-    /* Quick Jump Index Navigation */
-    .dashboard-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: center;
-      margin-top: 1rem;
-      padding-top: 0.75rem;
-      border-top: 1px solid rgba(255,255,255,0.15);
-    }
-    .nav-link {
-      background: rgba(255,255,255,0.12);
-      color: var(--mickey-white);
-      text-decoration: none;
-      padding: 0.35rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      transition: background 0.2s ease, color 0.2s ease;
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-    .nav-link:hover {
-      background: var(--mickey-yellow);
-      color: var(--mickey-black);
-    }
-
-    /* Days Itinerary */
     .day-item { display: flex; flex-direction: column; gap: 0.75rem; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
     .day-item:last-child { border-bottom: none; }
     .day-header-row { display: flex; align-items: flex-start; gap: 1rem; width: 100%; }
@@ -174,92 +103,16 @@
     .crowd-pill.low { background: #dcfce7; color: #15803d; }
     .crowd-pill.med { background: #fef9c3; color: #a16207; }
 
-    /* Stroller Rental Box */
-    .stroller-card {
-      border: 2px solid var(--stroller-orange);
-      background: var(--stroller-bg);
-      border-radius: 12px;
-      padding: 1.25rem;
-      margin-top: 0.5rem;
-    }
-    .stroller-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #fed7aa;
-      padding-bottom: 0.5rem;
-      margin-bottom: 0.75rem;
-    }
-    .stroller-header h3 {
-      color: #c2410c;
-      font-size: 1.1rem;
-    }
-    .stroller-price {
-      background: var(--stroller-orange);
-      color: white;
-      font-weight: 800;
-      padding: 0.25rem 0.65rem;
-      border-radius: 6px;
-      font-size: 0.9rem;
-    }
-    .stroller-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
-    }
-    .stroller-info-block {
-      font-size: 0.85rem;
-      color: #431407;
-      line-height: 1.45;
-    }
-    .stroller-info-block strong {
-      color: #9a3412;
-    }
-    .stroller-info-block ul {
-      list-style-type: square;
-      padding-left: 1.2rem;
-      margin-top: 0.3rem;
-    }
+    .stroller-card { border: 2px solid var(--stroller-orange); background: var(--stroller-bg); border-radius: 12px; padding: 1.25rem; margin-top: 0.5rem; }
+    .stroller-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #fed7aa; padding-bottom: 0.5rem; margin-bottom: 0.75rem; }
+    .stroller-header h3 { color: #c2410c; font-size: 1.1rem; }
+    .stroller-price { background: var(--stroller-orange); color: white; font-weight: 800; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.9rem; }
+    .stroller-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+    .stroller-info-block { font-size: 0.85rem; color: #431407; line-height: 1.45; }
+    .stroller-info-block ul { list-style-type: square; padding-left: 1.2rem; margin-top: 0.3rem; }
 
-    /* Day Options / Backup Cards */
-    .options-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 0.75rem;
-      margin-top: 0.5rem;
-      padding-left: 0.5rem;
-    }
-    .option-card {
-      background: var(--option-bg);
-      border: 1px solid var(--option-border);
-      border-left: 4px solid var(--option-amber);
-      border-radius: 10px;
-      padding: 0.75rem 0.9rem;
-      font-size: 0.82rem;
-    }
-    .option-card.primary {
-      background: #f8fafc;
-      border: 1px solid #cbd5e1;
-      border-left: 4px solid var(--ll-blue);
-    }
-    .option-title {
-      font-weight: 800;
-      color: #78350f;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.3rem;
-      text-transform: uppercase;
-      font-size: 0.72rem;
-      letter-spacing: 0.5px;
-    }
-    .option-card.primary .option-title { color: #0369a1; }
-    .option-desc { color: #334155; line-height: 1.35; }
-    .option-pro { margin-top: 0.35rem; color: #15803d; font-weight: 600; font-size: 0.78rem; }
-
-    /* Vegetarian / Vegan Section */
     .veg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1rem; margin-top: 0.5rem; }
-    .veg-card { border: 1px solid #c8e6c9; background: var(--plant-bg); border-radius: 12px; padding: 1rem; position: relative; }
+    .veg-card { border: 1px solid #c8e6c9; background: var(--plant-bg); border-radius: 12px; padding: 1rem; }
     .veg-card h3 { font-size: 1rem; color: var(--plant-green); border-bottom: 2px solid #a5d6a7; padding-bottom: 0.3rem; margin-bottom: 0.6rem; display: flex; justify-content: space-between; align-items: center; }
     .veg-card ul { list-style: none; padding-left: 0; }
     .veg-card li { font-size: 0.83rem; color: #1b5e20; margin-bottom: 0.45rem; padding-left: 1.2rem; position: relative; line-height: 1.4; }
@@ -268,7 +121,6 @@
     .tag-v { background: #c8e6c9; color: #1b5e20; }
     .tag-vg { background: #a5d6a7; color: #0d3b11; }
 
-    /* Lightning Lane Section */
     .ll-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 0.5rem; }
     .ll-card { border: 1px solid #bae6fd; background: var(--ll-bg); border-radius: 12px; padding: 1rem; }
     .ll-card h3 { font-size: 1rem; color: var(--ll-blue); border-bottom: 2px solid #7dd3fc; padding-bottom: 0.25rem; margin-bottom: 0.75rem; display: flex; justify-content: space-between; align-items: center; }
@@ -280,17 +132,11 @@
     .tier-2 { background: #e0f2fe; color: #0369a1; }
     .single-pass { background: #fbcfe8; color: #9d174d; }
 
-    /* Flights */
     .flight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 0.5rem; margin-bottom: 0.5rem; }
     .flight-card { border: 1px solid var(--border); padding: 1rem; border-radius: 12px; background: white; }
     .flight-card.best-fit { border: 2px solid var(--jetblue-blue); background: var(--jetblue-light); }
     .flight-card .badge { background: var(--jetblue-blue); color: var(--mickey-white); }
     .flight-times { margin: 0.5rem 0; font-size: 0.9rem; }
-
-    /* Checklist */
-    .checklist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
-    .checklist-group h3 { font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--mickey-black); border-bottom: 1px dashed var(--border); padding-bottom: 0.25rem; }
-    .check-item { display: block; font-size: 0.85rem; margin-bottom: 0.4rem; cursor: pointer; user-select: none; }
   </style>
 </head>
 <body>
@@ -302,7 +148,6 @@
       <p class="subtitle">Oct 31 – Nov 5, 2026 · 3 Guests</p>
       <div class="resort-tag">🏨 Disney's BoardWalk Villas (EPCOT Resort Area)</div>
       
-      <!-- Live Countdown Calendar -->
       <div class="countdown-container">
         <svg class="mickey-logo" viewBox="0 0 100 100" fill="#ffcc00">
           <circle cx="30" cy="30" r="22" />
@@ -318,21 +163,19 @@
         </div>
       </div>
 
-      <!-- Quick Index Links -->
       <nav class="dashboard-nav">
         <a href="#flights" class="nav-link">✈️ Flights</a>
         <a href="#stroller" class="nav-link">🛒 Stroller Rental</a>
         <a href="#itinerary" class="nav-link">🗓️ Confirmed Itinerary</a>
         <a href="#lightning-lanes" class="nav-link">⚡ Lightning Lanes</a>
         <a href="#plant-based-dining" class="nav-link">🌱 Plant-Based Guide</a>
-        <a href="#checklist" class="nav-link">✅ Checklist</a>
       </nav>
     </div>
   </header>
 
   <main class="dashboard-grid">
 
-    <!-- Flight Logistics -->
+    <!-- Flights -->
     <section id="flights" class="card">
       <h2>
         <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#00205b">
@@ -340,12 +183,11 @@
         </svg>
         Confirmed Flight Details (JetBlue Airways)
       </h2>
-      
       <div class="flight-grid">
         <div class="flight-card best-fit">
           <span class="badge">OUTBOUND · JETBLUE #B6 737</span>
           <div class="flight-times"><strong>BDL 7:30 AM</strong> → <strong>MCO 10:45 AM</strong> (3h 15m Non-stop)</div>
-          <p style="font-size: 0.8rem; color: #475569;">Lands at 10:45 AM! Arrive at BoardWalk, drop bags, and head over to 2:30 PM Beaches & Cream lunch!</p>
+          <p style="font-size: 0.8rem; color: #475569;">Lands at 10:45 AM! Arrive at BoardWalk, drop bags, and enjoy 2:30 PM Beaches & Cream lunch!</p>
         </div>
         <div class="flight-card best-fit">
           <span class="badge">RETURN · JETBLUE #B6 138</span>
@@ -353,10 +195,9 @@
           <p style="font-size: 0.8rem; color: #475569;">Perfect timing after 11:00 AM resort check-out!</p>
         </div>
       </div>
-      <p style="font-size: 0.82rem; color: #64748b; margin-top: 0.25rem; text-align: center;"><strong></strong>   </p>
     </section>
 
-    <!-- Kingdom Strollers Rental Section -->
+    <!-- Stroller Rental -->
     <section id="stroller" class="card" style="border-left: 5px solid var(--stroller-orange);">
       <h2>
         <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#ea580c">
@@ -364,26 +205,24 @@
         </svg>
         Stroller Rental Confirmation (Kingdom Strollers)
       </h2>
-      
       <div class="stroller-card">
         <div class="stroller-header">
           <h3>🛒 BOB Revolution Single Stroller</h3>
-          <span class=></span>
+          <span class="stroller-price">$95.00 Total</span>
         </div>
         <div class="stroller-grid">
           <div class="stroller-info-block">
-            <p><strong><u>📍 Delivery Meeting:</strong></u> Saturday, 10/31/2026 between 06:00 PM – 07:00 PM</p>
-            <p><strong><u>📍 Drop-Off / Return Meeting:</strong></u> Thursday, 11/05/2026 at 08:30 AM</p>
-            <p><strong><u>📍 Location:</strong></u> Disney's BoardWalk — Area next to the valet station outside the main lobby.</p>
-            <p style="margin-top: 0.4rem;"><strong>⚠️ Instructions:</strong> Must meet rep in person (wearing an orange shirt) for both delivery and pickup. Driver will text prior to arrival.</p>
+            <p><strong>📍 Delivery Meeting:</strong> Saturday, 10/31/2026 between 06:00 PM – 07:00 PM</p>
+            <p><strong>📍 Return Meeting:</strong> Thursday, 11/05/2026 at 08:30 AM</p>
+            <p><strong>📍 Location:</strong> Disney's BoardWalk — Valet station outside main lobby.</p>
+            <p style="margin-top: 0.4rem;"><strong>⚠️ Instructions:</strong> Meet rep in person (orange shirt) at valet.</p>
           </div>
           <div class="stroller-info-block">
             <p><strong>Specifications & Features:</strong></p>
             <ul>
-              <li>Easy two-step folding & 42″ adjustable handlebar</li>
-              <li>Large clam shell canopy & fully reclining seat</li>
+              <li>Easy 2-step fold & 42″ adjustable handlebar</li>
+              <li>Large canopy & fully reclining seat</li>
               <li>16″ air-filled rear wheels for smooth pushing</li>
-              <li>Best for kids up to 48″ / 70 lb weight capacity</li>
               <li>Meets all Disney size requirements</li>
             </ul>
           </div>
@@ -391,13 +230,13 @@
       </div>
     </section>
 
-    <!-- Updated Official Itinerary -->
+    <!-- Corrected Itinerary -->
     <section id="itinerary" class="card">
       <h2>
         <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#e60012">
           <circle cx="30" cy="30" r="22" /><circle cx="70" cy="30" r="22" /><circle cx="50" cy="62" r="30" />
         </svg>
-        Updated Confirmed Itinerary
+        Confirmed Itinerary
       </h2>
       <div class="itinerary-list">
         
@@ -406,14 +245,15 @@
           <div class="day-header-row">
             <div class="day-badge">DAY 1 · SAT 10/31</div>
             <div class="day-details">
-              <h3>Arrival & Disney's BoardWalk Check-In</h3>
-              <p>Check in after 4:00 PM at Disney's BoardWalk Villas (EPCOT Resort Area). Direct-to-Room service enabled.</p>
+              <h3>Resort Day & Crescent Lake Relaxation</h3>
+              <p>Check-in at BoardWalk Villas (after 4:00 PM). Enjoy the pool, rent Surrey bikes, and relax around Crescent Lake.</p>
               <div class="dining-tag">
-                <span class="dining-pill">🍦 2:30 PM: Beaches & Cream Soda Shop Lunch </span>
-                <span class="dining-pill stroller">🛒 6:00–7:00 PM: Meet Kingdom Strollers at Valet Station</span>
+                <span class="dining-pill">🍦 2:30 PM: Beaches & Cream Soda Shop Lunch</span>
+                <span class="dining-pill quick">🍕 Dinner Options: Trattoria al Forno, BoardWalk Deli, or Rosa Mexicano</span>
+                <span class="dining-pill stroller">🛒 6:00–7:00 PM: Meet Kingdom Strollers at Valet</span>
               </div>
             </div>
-            <div class="crowd-pill low">Arrival Day</div>
+            <div class="crowd-pill low">Resort Day</div>
           </div>
         </div>
 
@@ -423,10 +263,10 @@
             <div class="day-badge">DAY 2 · SUN 11/01</div>
             <div class="day-details">
               <h3>Disney's Hollywood Studios</h3>
-              <p>Park hours: 9:00 AM – 9:00 PM (Early Entry 8:30 AM – 9:00 AM). Staying at BoardWalk Villas.</p>
+              <p>Park hours: 9:00 AM – 9:00 PM (Early Entry 8:30 AM). Easy Skyliner or walk access from BoardWalk.</p>
               <div class="dining-tag">
-                <span class="dining-pill">🤠 12:25 PM: Roundup Rodeo BBQ Lunch </span>
-                <span class="dining-pill">🎬 4:40 PM: Sci-Fi Dine-In Theater Dinner </span>
+                <span class="dining-pill">🤠 12:25 PM: Roundup Rodeo BBQ Lunch</span>
+                <span class="dining-pill">🎬 4:40 PM: Sci-Fi Dine-In Theater Dinner</span>
               </div>
             </div>
             <div class="crowd-pill med">Crowd 5/10</div>
@@ -438,11 +278,11 @@
           <div class="day-header-row">
             <div class="day-badge">DAY 3 · MON 11/02</div>
             <div class="day-details">
-              <h3>EPCOT & Disney Springs Evening + Fantasmic!</h3>
-              <p>EPCOT Park hours: 9:00 AM – 9:00 PM (Early Entry 8:30 AM – 9:00 AM, Extended Evening Hours 9:00 PM – 11:00 PM). Disney Springs hours: 10:00 AM – 11:00 PM. Fantasmic! show included.</p>
+              <h3>Blizzard Beach Water Park & Disney Springs Evening</h3>
+              <p>Water park fun during the day, followed by shopping & dining at Disney Springs (hours: 10:00 AM – 11:00 PM).</p>
               <div class="dining-tag">
-                <span class="dining-pill">⚙️ 5:10 PM: The Edison Dinner at Disney Springs </span>
-                <span class="dining-pill show">✨ Fantasmic! Nighttime Show</span>
+                <span class="dining-pill quick">🏖️ Lunch: Lottawatta Lodge (Blizzard Beach)</span>
+                <span class="dining-pill">⚙️ 5:10 PM: The Edison Dinner at Disney Springs</span>
               </div>
             </div>
             <div class="crowd-pill low">Crowd 4/10</div>
@@ -454,15 +294,14 @@
           <div class="day-header-row">
             <div class="day-badge">DAY 4 · TUE 11/03</div>
             <div class="day-details">
-              <h3>EPCOT Day & Luminous Fireworks</h3>
-              <p>Park hours: 9:00 AM – 9:00 PM (Early Entry 8:30 AM – 9:00 AM).</p>
+              <h3>EPCOT Day</h3>
+              <p>Park hours: 9:00 AM – 9:00 PM. Enter via International Gateway right from BoardWalk!</p>
               <div class="dining-tag">
-                <span class="dining-pill">🐿️ 12:15 PM: Chip 'n' Dale's Harvest Feast at Garden Grill </span>
-                <span class="dining-pill">🚀 Space 220 Dinner</span>
-                <span class="dining-pill show">🎆 Luminous The Symphony of Us (EPCOT Nighttime Spectacular)</span>
+                <span class="dining-pill">🚀 Lunch/Dinner: Space 220 Lounge or Garden Grill</span>
+                <span class="dining-pill show">🎆 9:00 PM: Luminous Fireworks over World Showcase Lagoon</span>
               </div>
             </div>
-            <div class="crowd-pill low">Crowd 4/10</div>
+            <div class="crowd-pill med">Crowd 5/10</div>
           </div>
         </div>
 
@@ -471,12 +310,12 @@
           <div class="day-header-row">
             <div class="day-badge">DAY 5 · WED 11/04</div>
             <div class="day-details">
-              <h3>Magic Kingdom Day & Castle Fireworks</h3>
-              <p>Full Magic Kingdom day with quick service meals for maximum flexibility before 8:00 PM fireworks.</p>
+              <h3>Magic Kingdom Day & Fireworks</h3>
+              <p>Full day at Magic Kingdom with quick-service meals for flexibility before the 8:00 PM fireworks.</p>
               <div class="dining-tag">
                 <span class="dining-pill quick">🐟 Lunch: Columbia Harbour House</span>
-                <span class="dining-pill quick">🍔 6:15 PM Dinner: Cosmic Ray's or Casey's Corner</span>
-                <span class="dining-pill show">🎆 8:00 PM: Happily Ever After Fireworks (Magic Kingdom)</span>
+                <span class="dining-pill quick">🍔 Dinner: Casey's Corner or Cosmic Ray's</span>
+                <span class="dining-pill show">🎆 8:00 PM: Happily Ever After Fireworks</span>
               </div>
             </div>
             <div class="crowd-pill med">Crowd 5/10</div>
@@ -488,10 +327,10 @@
           <div class="day-header-row">
             <div class="day-badge">DEPARTURE · THU 11/05</div>
             <div class="day-details">
-              <h3>Check-Out & Return Travel</h3>
-              <p>Check out before 11:00 AM at Disney's BoardWalk Villas. JetBlue return flight #B6 138 (12:13 PM → 3:00 PM).</p>
+              <h3>Check-Out & Return Flight</h3>
+              <p>Check out by 11:00 AM. JetBlue flight #B6 138 (12:13 PM MCO → 3:00 PM BDL).</p>
               <div class="dining-tag">
-                <span class="dining-pill stroller">🛒 8:30 AM: Return Stroller to Kingdom Strollers at Valet Station</span>
+                <span class="dining-pill stroller">🛒 8:30 AM: Return Stroller at BoardWalk Valet</span>
               </div>
             </div>
           </div>
@@ -500,7 +339,7 @@
       </div>
     </section>
 
-    <!-- Kid-Friendly Lightning Lane Guide -->
+    <!-- Lightning Lanes -->
     <section id="lightning-lanes" class="card" style="border-left: 5px solid var(--ll-blue);">
       <h2>
         <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#0284c7">
@@ -508,195 +347,73 @@
         </svg>
         Lightning Lane Pass Guide (For Bowie - Age 6)
       </h2>
-      <p style="font-size: 0.85rem; color: #475569; margin-bottom: 1rem;">
-        Top-priority selections optimized for age 6 to minimize standby waiting. Pre-booking opens 7 days before check-in for Disney Resort guests!
-      </p>
-
       <div class="ll-grid">
-        
-        <!-- Hollywood Studios -->
         <div class="ll-card">
           <h3>Hollywood Studios (Sun Nov 1) <span>🎬</span></h3>
           <ul>
-            <li><strong>Slinky Dog Dash:</strong> #1 Priority pre-selection! Very high standby lines. <span class="ll-badge tier-1">Tier 1 Choice</span></li>
-            <li><strong>Mickey & Minnie’s Runaway Railway:</strong> High charm dark ride, fun for the whole family. <span class="ll-badge tier-2">Tier 2 Choice</span></li>
-            <li><strong>Toy Story Mania!:</strong> Low-stress interactive 3D carnival game ride with no height minimum. <span class="ll-badge tier-2">Tier 2 Choice</span></li>
-            <li><strong>Alien Swirling Saucers:</strong> Fun spinning ride in Toy Story Land; great quick follow-up pass. <span class="ll-badge tier-2">Tier 2 Choice</span></li>
+            <li><strong>Slinky Dog Dash:</strong> #1 Priority pre-selection! <span class="ll-badge tier-1">Tier 1</span></li>
+            <li><strong>Mickey & Minnie’s Runaway Railway:</strong> High charm dark ride. <span class="ll-badge tier-2">Tier 2</span></li>
+            <li><strong>Toy Story Mania!:</strong> Fun 3D interactive ride. <span class="ll-badge tier-2">Tier 2</span></li>
           </ul>
         </div>
 
-        <!-- EPCOT -->
         <div class="ll-card">
-          <h3>EPCOT (Mon Nov 2 & Tue Nov 3) <span>🌍</span></h3>
+          <h3>EPCOT (Tue Nov 3) <span>🌍</span></h3>
           <ul>
-            <li><strong>Remy’s Ratatouille Adventure:</strong> Top Tier 1 pick! Right near your International Gateway entrance. <span class="ll-badge tier-1">Tier 1 Choice</span></li>
-            <li><strong>Frozen Ever After:</strong> Can be selected as Tier 1 instead of Remy if Frozen is a favorite. <span class="ll-badge tier-1">Tier 1 Alt</span></li>
-            <li><strong>Soarin’ Around the World:</strong> Smooth, gentle flying simulator over global landmarks. <span class="ll-badge tier-2">Tier 2 Choice</span></li>
-            <li><strong>Journey Into Imagination With Figment:</strong> Zero wait dark ride; perfect mid-day low-sensory pick. <span class="ll-badge tier-2">Tier 2 Choice</span></li>
+            <li><strong>Frozen Ever After:</strong> #1 Priority dark ride in Norway! <span class="ll-badge tier-1">Tier 1</span></li>
+            <li><strong>Remy’s Ratatouille Adventure:</strong> Trackless 3D ride in France. <span class="ll-badge tier-1">Tier 1 Alt</span></li>
+            <li><strong>Soarin' Around the World:</strong> Smooth flying simulator (40" height min). <span class="ll-badge tier-2">Tier 2</span></li>
           </ul>
         </div>
 
-        <!-- Magic Kingdom -->
         <div class="ll-card">
           <h3>Magic Kingdom (Wed Nov 4) <span>🏰</span></h3>
           <ul>
-            <li><strong>Peter Pan’s Flight:</strong> High priority dark ride with long standby queues. <span class="ll-badge tier-1">Tier 1 Choice</span></li>
-            <li><strong>Big Thunder Mountain Railroad:</strong> Great "first coaster" thrills for 6-year-olds (40" height minimum). <span class="ll-badge tier-1">Tier 1 Alt</span></li>
-            <li><strong>Buzz Lightyear’s Space Ranger Spin:</strong> Fun laser-shooting ride in Tomorrowland. <span class="ll-badge tier-2">Tier 2 Choice</span></li>
-            <li><strong>The Many Adventures of Winnie the Pooh:</strong> Gentle dark ride that skips afternoon waits. <span class="ll-badge tier-2">Tier 2 Choice</span></li>
-            <li><strong>Seven Dwarfs Mine Train:</strong> Purchased separately as a Single Pass; ideal smooth family coaster. <span class="ll-badge single-pass">Single Pass</span></li>
+            <li><strong>Peter Pan’s Flight:</strong> High-demand classic dark ride. <span class="ll-badge tier-1">Tier 1</span></li>
+            <li><strong>Big Thunder Mountain Railroad:</strong> Perfect starter coaster (40" height min). <span class="ll-badge tier-1">Tier 1 Alt</span></li>
+            <li><strong>Seven Dwarfs Mine Train:</strong> Purchased as Single Pass. <span class="ll-badge single-pass">Single Pass</span></li>
           </ul>
         </div>
-
-        <!-- Nighttime Shows -->
-        <div class="ll-card" style="border-color: #fde68a; background: #fffbeb;">
-          <h3 style="color: #b45309;">Nighttime Spectaculars <span>🎆</span></h3>
-          <ul>
-            <li><strong>Fantasmic! (Mon Nov 2):</strong> Live nighttime show at Hollywood Studios.</li>
-            <li><strong>Luminous The Symphony of Us (Tue Nov 3):</strong> Fireworks at EPCOT World Showcase.</li>
-            <li><strong>Happily Ever After (Wed Nov 4):</strong> 8:00 PM Magic Kingdom Castle Fireworks.</li>
-          </ul>
-        </div>
-
       </div>
     </section>
 
-    <!-- Vegetarian & Plant-Based Food Guide -->
+    <!-- Plant-Based Food Guide -->
     <section id="plant-based-dining" class="card" style="border-left: 5px solid var(--plant-green);">
-       baseline
       <h2>
         <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#2e7d32">
           <circle cx="30" cy="30" r="22" /><circle cx="70" cy="30" r="22" /><circle cx="50" cy="62" r="30" />
         </svg>
-        Vegetarian & Plant-Based Food Guide
+        Vegetarian & Plant-Based Highlights
       </h2>
 
       <div class="veg-grid">
-        
-        <!-- Beaches & Cream -->
         <div class="veg-card">
           <h3>Beaches & Cream (Sat 2:30 PM) <span class="veg-tag tag-vg">Plant-Based Friendly</span></h3>
           <ul>
-            <li><strong>Impossible Burger:</strong> Plant-based patty on an allergy-friendly bun with plant mayo. <span class="veg-tag tag-vg">Vegan</span></li>
-            <li><strong>Loaded Plant-Based Tots:</strong> Tots topped with plant-based chili, dairy-free cheese, and sour cream. <span class="veg-tag tag-vg">Vegan</span></li>
-            <li><strong>Beaches & Cream Grilled Cheese:</strong> Classic melted cheese served with creamy tomato soup. <span class="veg-tag tag-v">Vegetarian</span></li>
-            <li><strong>Cookie Fries & Non-Dairy Ice Cream:</strong> Crispy cookie fries with non-dairy coconut/soy ice cream scoops. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Impossible Burger & Loaded Tots:</strong> Plant-based chili, dairy-free cheese & sour cream. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Cookie Fries & Non-Dairy Ice Cream:</strong> Crispy cookie fries with coconut/soy scoops. <span class="veg-tag tag-vg">Vegan</span></li>
           </ul>
         </div>
 
-        <!-- Roundup Rodeo BBQ -->
         <div class="veg-card">
-          <h3>Roundup Rodeo BBQ (Sun 12:25 PM) <span class="veg-tag tag-vg">Dedicated Veg Skillet</span></h3>
+          <h3>EPCOT Dining (Tue Nov 3) <span class="veg-tag tag-v">Variety</span></h3>
           <ul>
-            <li><strong>Trixie’s Plant-Based Trio:</strong> BBQ platter featuring Combat Crisp Sausage, Slow-smoked Cauliflower, and Rip-Roarin' Jackfruit. <span class="veg-tag tag-vg">Vegan</span></li>
-            <li><strong>Rootin’ Tootin’ Tomato Salad & Veggie Slaw:</strong> Fresh cucumbers, tomatoes, and "The Claw!" crunchy veggie slaw. <span class="veg-tag tag-vg">Vegan</span></li>
-            <li><strong>Buckin' Baked Beans & Corn on Cob:</strong> Vegetarian baked beans and grilled street corn. <span class="veg-tag tag-v">Vegetarian</span></li>
-            <li><strong>Gruff’s Peach-Strawberry Pie:</strong> Plant-based dessert served in a jar. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Space 220 Lounge:</strong> Plant-based appetizers & short rib options. <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Garden Grill:</strong> Family-style veggie skillet with fresh land pavilion veggies. <span class="veg-tag tag-v">Vegetarian</span></li>
+            <li><strong>World Showcase Options:</strong> Vegetable Gyoza (Japan), Falafel (Morocco), or Empanadas (Mexico). <span class="veg-tag tag-vg">Vegan</span></li>
           </ul>
         </div>
 
-        <!-- Sci-Fi Dine-In -->
         <div class="veg-card">
-          <h3>Sci-Fi Dine-In Theater (Sun 4:40 PM) <span class="veg-tag tag-vg">Fan Favorite</span></h3>
+          <h3>Roundup Rodeo BBQ (Sun 12:25 PM) <span class="veg-tag tag-vg">Dedicated Skillet</span></h3>
           <ul>
-            <li><strong>Flying Saucer Impossible Burger:</strong> Plant-based burger topped with grilled portobello mushroom steak and cashew mozzarella. <span class="veg-tag tag-vg">Vegan</span></li>
-            <li><strong>Spinach & Artichoke Dip:</strong> Creamy cashew-based dip served with warm tortilla chips. <span class="veg-tag tag-vg">Vegan</span></li>
-            <li><strong>Out-of-this-World Cookie Milkshake:</strong> Plant-based milkshake made with non-dairy milk and plant ice cream! <span class="veg-tag tag-vg">Vegan</span></li>
+            <li><strong>Trixie’s Plant-Based Trio:</strong> Combat Crisp Sausage, Cauliflower, and Jackfruit. <span class="veg-tag tag-vg">Vegan</span></li>
           </ul>
-        </div>
-
-        <!-- The Edison -->
-        <div class="veg-card">
-          <h3>The Edison (Mon 5:10 PM) <span class="veg-tag tag-v">Customizable</span></h3>
-          <ul>
-            <li><strong>The Beyond Burger:</strong> Plant-based burger patty served with lettuce, tomato, pickles, and fries. <span class="veg-tag tag-v">Vegetarian</span></li>
-            <li><strong>Beyond Sausage & Pepper Pasta:</strong> Hearty pasta dish with plant-based sausage and savory marinara sauce. <span class="veg-tag tag-v">Vegetarian</span></li>
-          </ul>
-        </div>
-
-        <!-- Garden Grill -->
-        <div class="veg-card">
-          <h3>Garden Grill (Tue 12:15 PM) <span class="veg-tag tag-vg">Family Style</span></h3>
-          <ul>
-            <li><strong>Harvest Feast Plant-Based Platter:</strong> Veggie loaf with garden gravy, roasted potatoes, and fresh farm vegetables. <span class="veg-tag tag-vg">Vegan</span></li>
-            <li><strong>Berry Shortcake:</strong> Non-dairy shortcake dessert. <span class="veg-tag tag-vg">Vegan</span></li>
-          </ul>
-        </div>
-
-        <!-- Space 220 -->
-        <div class="veg-card">
-          <h3>Space 220 (Tue Dinner) <span class="veg-tag tag-v">Prix Fixe Options</span></h3>
-          <ul>
-            <li><strong>Space Greens / Centauri Caesar:</strong> Fresh plant-based salad starters. <span class="veg-tag tag-v">Vegetarian</span></li>
-            <li><strong>Space Station Stuffed Mushrooms / Roasted Cauliflower Steak:</strong> Flavorful plant-forward entrees. <span class="veg-tag tag-vg">Vegan</span></li>
-          </ul>
-        </div>
-
-        <!-- Magic Kingdom Quick Service -->
-        <div class="veg-card" style="border-color: #fde68a; background: #fffbeb;">
-          <h3 style="color: #b45309; border-bottom-color: #fcd34d;">Magic Kingdom Quick Service (Wed Nov 4) <span class="veg-tag tag-vg">Flex Options</span></h3>
-          <ul>
-            <li><strong>Columbia Harbour House:</strong> Plant-Based Heart of Palm & Artichoke Roll or Vegetarian Chili. Quiet, air-conditioned upstairs seating break. <span class="veg-tag tag-vg">Vegan</span></li>
-            <li><strong>Cosmic Ray’s Starlight Café:</strong> Impossible™ Patty Melt or Plant-Based Chicago-Style Dog. Convenient location right near Cinderella Castle. <span class="veg-tag tag-vg">Vegan</span></li>
-            <li><strong>Casey’s Corner:</strong> Plant-Based Chicago-Style Dog. Great for mobile ordering right on Main Street before finding a fireworks viewing spot. <span class="veg-tag tag-vg">Vegan</span></li>
-            <li><strong>Pecos Bill Tall Tale Inn:</strong> Plant-Based Rice Bowl or Veggie Fajitas with black beans and guacamole. <span class="veg-tag tag-vg">Vegan</span></li>
-            <li><strong>Sunshine Tree Terrace / Aloha Isle:</strong> Refreshing dairy-free Dole Whip Float (Pineapple or Orange). <span class="veg-tag tag-vg">Vegan</span></li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Checklist -->
-    <section id="checklist" class="card">
-      <h2>
-        <svg class="section-mickey-icon" viewBox="0 0 100 100" fill="#e60012">
-          <circle cx="30" cy="30" r="22" /><circle cx="70" cy="30" r="22" /><circle cx="50" cy="62" r="30" />
-        </svg>
-        Trip Planning Checklist
-      </h2>
-      <div class="checklist-grid">
-        <div class="checklist-group">
-          <h3>Reservations & Travel</h3>
-          <label class="check-item"><input type="checkbox" checked> Book Flights (JetBlue #B6 737 / #B6 138)</label>
-          <label class="check-item"><input type="checkbox" checked> BoardWalk Villas Reservation </label>
-          <label class="check-item"><input type="checkbox" checked> Kingdom Strollers BOB Revolution Single Reserved (95.00)</label>
-          <label class="check-item"><input type="checkbox" checked> Table Service Dining Confirmed (Beaches & Cream, Roundup Rodeo, Sci-Fi, Edison, Garden Grill, Space 220)</label>
-          <label class="check-item"><input type="checkbox" checked> All Nighttime Shows Scheduled (Fantasmic!, Luminous, Happily Ever After)</label>
-        </div>
-        <div class="checklist-group">
-          <h3>Upcoming Action Items</h3>
-          <label class="check-item"><input type="checkbox"> Pay Remaining Resort Balance Due Thursday, Oct 1, 2026)</label>
-          <label class="check-item"><input type="checkbox"> Complete Direct-to-Room Online Check-In in My Disney Experience App</label>
-          <label class="check-item"><input type="checkbox"> Pre-book Lightning Lane Passes (7 days prior to check-in)</label>
-          <label class="check-item"><input type="checkbox"> Meet Stroller Representative at BoardWalk Valet Station (Sat 10/31 6:00–7:00 PM)</label>
         </div>
       </div>
     </section>
 
   </main>
 
-  <script>
-    // Live Countdown Timer logic for Oct 31, 2026
-    const targetDate = new Date("October 31, 2026 00:00:00").getTime();
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const difference = targetDate - now;
-
-      if (difference > 0) {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-        document.getElementById("days").innerText = String(days).padStart(2, '0');
-        document.getElementById("hours").innerText = String(hours).padStart(2, '0');
-        document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
-        document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
-      }
-    }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
 </body>
 </html>
